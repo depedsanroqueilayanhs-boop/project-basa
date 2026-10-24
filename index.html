@@ -142,7 +142,9 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
 .hit-about{left:54.2%;top:1.0%;width:12.3%;height:3.2%}
 .hit-howto{left:68.7%;top:1.0%;width:13.4%;height:3.2%}
 .hit-start-top{left:83.0%;top:1.0%;width:13.0%;height:3.2%}
-.hit-start-main{left:34.7%;top:42.5%;width:32.0%;height:4.4%}
+.hit-start-main{left:32.5%;top:42.5%;width:35.0%;height:4.4%;box-sizing:border-box;border:0;border-radius:999px;background:linear-gradient(180deg,#ffe78a 0%,#f5b52d 100%);box-shadow:inset 0 0 0 3px #fff0a8, inset 0 0 0 6px #b87912, 0 3px 0 #9a6714;color:#263c2e;font-size:clamp(7px,1vw,16px);font-weight:900;text-align:center;display:flex;align-items:center;justify-content:center;white-space:nowrap;padding:0 5px;line-height:1.05;z-index:3;overflow:hidden}
+.hit-start-main::after{content:"Simulan ang Iyong Paglalakbay sa Pagbasa"}
+.hit-start-main{cursor:default;pointer-events:none}
 .hit-grade-7{left:3.1%;top:67.9%;width:22.8%;height:17.1%}
 .hit-grade-8{left:27.3%;top:67.9%;width:22.7%;height:17.1%}
 .hit-grade-9{left:51.4%;top:67.9%;width:22.8%;height:17.1%}
@@ -191,6 +193,26 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
 #basaVocabPanel .card h3{display:flex;align-items:center;justify-content:space-between;gap:8px}#basaVocabPanel button{cursor:pointer}#basaVocabPanel button:focus-visible{outline:3px solid #d4a72c;outline-offset:2px}
 
 </style>
+
+<style id="basa-basic-preview-theme">
+/* Preview-only BASA BASIC visual refresh; main portal content/layout retained */
+#basaBasicPage{background:linear-gradient(145deg,#fff9e9 0%,#f0fbff 48%,#f3fff5 100%)!important;border:2px solid #d7e8f5!important;border-radius:24px!important;padding:clamp(16px,3vw,30px)!important;box-shadow:0 12px 32px rgba(42,76,102,.10)!important}
+#basaBasicPage .basa-back-home{border:0!important;border-radius:14px!important;padding:11px 16px!important;background:linear-gradient(135deg,#2868c7,#6145b5)!important;color:#fff!important;font-weight:700!important;box-shadow:0 4px 0 rgba(30,50,100,.12)!important}
+#basaBasicPage .basa-back-home:focus-visible,#basaBasicPage button:focus-visible{outline:3px solid #ffb703!important;outline-offset:3px!important}
+#basaBasicPage #basaBasicLevels{gap:12px!important}
+#basaBasicPage #basaBasicLevels button{min-height:112px!important;border:2px solid #dce7f5!important;border-radius:18px!important;padding:16px!important;box-shadow:0 5px 0 rgba(46,74,113,.08)!important;transition:transform .15s ease,box-shadow .15s ease!important}
+#basaBasicPage #basaBasicLevels button:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(46,74,113,.10)!important}
+#basaBasicPage #basaBasicLevels button:nth-child(1){background:#fff0b8!important;color:#6c4500!important;border-color:#f4cf58!important}
+#basaBasicPage #basaBasicLevels button:nth-child(2){background:#dff2ff!important;color:#124d7a!important;border-color:#8bcaf4!important}
+#basaBasicPage #basaBasicLevels button:nth-child(3){background:#e9e0ff!important;color:#4c2d8b!important;border-color:#c0a9ff!important}
+#basaBasicPage #basaBasicLevels button:nth-child(4){background:#dff8e8!important;color:#155d3b!important;border-color:#95dfb1!important}
+#basaBasicPage #basaBasicActivity>.card{border:2px solid #d9e6f5!important;border-radius:22px!important;padding:clamp(15px,2.6vw,26px)!important;box-shadow:0 8px 22px rgba(42,76,102,.08)!important}
+#basaBasicPage #basaBasicActivity h3{font-size:clamp(1.15rem,2.4vw,1.55rem)!important;color:#243b5a!important}
+#basaBasicPage #basaBasicActivity button[aria-pressed]{border-color:#2468c9!important;background:#e4f1ff!important;color:#123c78!important;font-weight:700!important}
+#basaBasicPage #basaBasicActivity button:disabled{opacity:.55;cursor:not-allowed}
+@media(prefers-reduced-motion:reduce){#basaBasicPage *{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
 </head>
 <body>
 <main class="wrap">
@@ -212,16 +234,26 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
       <button type="button" class="cover-hit hit-about" data-page="aboutPortal" aria-label="Tungkol sa Portal"></button>
       <button type="button" class="cover-hit hit-howto" data-page="howToUse" aria-label="Paano Gamitin"></button>
       <button type="button" class="cover-hit hit-start-top" data-page="gradePage" aria-label="Simulan"></button>
-      <button type="button" class="cover-hit hit-start-main" data-page="gradePage" aria-label="Simulan na natin"></button>
+      <div class="cover-hit hit-start-main" aria-hidden="true"></div>
       <button type="button" class="cover-hit hit-grade-7" data-grade-jump="7" aria-label="Grade 7"></button>
       <button type="button" class="cover-hit hit-grade-8" data-grade-jump="8" aria-label="Grade 8"></button>
       <button type="button" class="cover-hit hit-grade-9" data-grade-jump="9" aria-label="Grade 9"></button>
       <button type="button" class="cover-hit hit-grade-10" data-grade-jump="10" aria-label="Grade 10"></button>
     </div>
   </div>
-<p class="home-credit">Inisyatiba at Konsepto ni <strong>Ma&#39;am Laarnie</strong></p>
-<p class="notice-no-account">Hindi kailangan ng account o personal na detalye upang gamitin ang portal.</p>
 </section>
+<!-- HOME ORDER: cover/Grade 7–10 cards, then BASA BASIC, then Kasanayan sa Pagbasa, then Mga Babasahin/footer. -->
+<section class="card" id="basaBasicEntryCard" style="display:block;margin-top:18px;margin-bottom:18px;border:2px solid #8ac9a7;background:linear-gradient(120deg,#f0fff5 0%,#e8f5ff 55%,#fff7df 100%);box-shadow:0 8px 22px rgba(24,91,68,.12);border-radius:20px;padding:22px">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:220px">
+      <p class="eyebrow">PAGHAHANDA SA PAGBASA</p>
+      <h3 style="margin:4px 0;color:#175847;font-size:1.45rem">📚 BASA BASIC</h3>
+      <p class="muted" style="margin:4px 0">Mga interaktibong gawain sa tunog, pantig, salita, at pangungusap. May apat na antas at 80 orihinal na item.</p>
+    </div>
+    <button type="button" class="basa-back-home" onclick="openBasaBasic()">Simulan ang BASA BASIC</button>
+  </div>
+</section>
+
 <section class="card" id="vocabEntryCard" style="margin-top:14px">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
     <div>
@@ -233,23 +265,19 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
   </div>
 </section>
 
-<div style="text-align:center;margin:16px 0">
-<button type="button" onclick="openBasaLibrary()">📚 Tingnan ang mga Babasahin</button>
-</div>
-
 <section class="card" id="gradePage" hidden>
     <div class="eyebrow">Hakbang 1</div>
     <h2>Pumili ng baitang</h2>
-    <p class="muted">May sample lesson pa lamang para sa Grade 7. Inihahanda pa ang mga aralin para sa ibang baitang.</p>
+    <p class="muted">Piliin ang baitang upang buksan ang kaukulang babasahin at gawain.</p>
     <div class="grid" role="group" aria-label="Pumili ng baitang">
-      <button class="gradebtn active" data-grade="7"><strong>Grade 7</strong><span>May demo na aralin</span></button>
-      <button class="gradebtn" data-grade="8"><strong>Grade 8</strong><span>Inihahanda pa</span></button>
-      <button class="gradebtn" data-grade="9"><strong>Grade 9</strong><span>Inihahanda pa</span></button>
-      <button class="gradebtn" data-grade="10"><strong>Grade 10</strong><span>Inihahanda pa</span></button>
+      <button class="gradebtn active" data-grade="7"><strong>Grade 7</strong><span>May babasahin</span></button>
+      <button class="gradebtn" data-grade="8"><strong>Grade 8</strong><span>Mga babasahin</span></button>
+      <button class="gradebtn" data-grade="9"><strong>Grade 9</strong><span>Mga babasahin</span></button>
+      <button class="gradebtn" data-grade="10"><strong>Grade 10</strong><span>Mga babasahin</span></button>
     </div>
-    <p class="muted" id="gradeNote" aria-live="polite">Ang Grade 7 lamang ang may sample content sa prototype na ito.</p>
+    <p class="muted" id="gradeNote" aria-live="polite">Piliin ang baitang upang makita ang mga babasahin at gawain.</p>
     <div class="row">
-      <span class="pill" id="gradeStatus">Grade 7 · Demo lesson</span>
+      <span class="pill" id="gradeStatus">Grade 7 · Mga babasahin</span>
       <button class="btn" id="openLesson">Buksan ang aralin →</button>
       <button class="btn secondary" type="button" data-page="home">Pangunahing Pahina</button>
     </div>
@@ -272,18 +300,24 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
 
 <section class="card" id="aboutPortal" hidden>
       <div class="eyebrow">Tungkol sa portal</div>
-      <h2>Ano ang PROJECT BASA?</h2>
-      <p>Ang PROJECT BASA ay isang digital na espasyo para sa pagsasanay sa pagbasa at pag-unawa. Layunin nitong tulungan ang mga mag-aaral na maging mas kumpiyansa sa pagbabasa, pagpapalawak ng talasalitaan, at pagsusuri ng kanilang binasa.</p>
-      <p>Sa bawat aralin, maaari mong:</p>
-      <ul>
-        <li>magbasa ng isang orihinal na kuwentong kathang-isip;</li>
-        <li>pag-aralan ang mga salitang maaaring hindi pamilyar sa iyo;</li>
-        <li>subukin ang iyong pag-unawa sa pamamagitan ng mga tanong; at</li>
-        <li>tingnan ang feedback upang malaman kung aling bahagi ang maaari mo pang balikan.</li>
-      </ul>
-      <p class="notice-no-account">Hindi kailangan ng account o personal na detalye upang gamitin ang portal.</p>
-      <p>Gamitin ang portal sa sarili mong bilis. Maaari mong basahin muli ang kuwento at humingi ng tulong sa guro o tutor kung may hindi malinaw.</p>
-    <div class="row"><button class="btn secondary" type="button" data-page="home">← Pangunahing Pahina</button></div><div class="row"><button class="btn" type="button" data-page="creditsPage">Pagkilala sa Proponent →</button></div>
+      <h2>Kilalanin ang PROJECT BASA</h2>
+      <p>Ang PROJECT BASA (Batayang Aralin sa Suri at Analisis ng Binabasa) ay isang digital na espasyo para sa pagsasanay sa pagbasa at pag-unawa. Layunin nitong magbigay ng mga gawaing makatutulong sa mga mag-aaral na malinang ang kanilang kasanayan sa pagbasa sa pamamagitan ng mga babasahin at interaktibong pagsasanay.</p>
+      <p><strong>Sa portal na ito, maaari mong:</strong></p>
+      <div class="about-feature" style="display:flex;gap:14px;align-items:flex-start;margin:16px 0;padding:14px;border-radius:14px;background:#eaf3ff">
+        <div aria-hidden="true" style="font-size:1.8rem;line-height:1">📖</div>
+        <div><strong>Magbasa at umunawa</strong><p style="margin:6px 0 0">Magsanay sa pagbasa ng mga babasahing angkop sa baitang at mga gawaing sumusukat sa pag-unawa.</p></div>
+      </div>
+      <div class="about-feature" style="display:flex;gap:14px;align-items:flex-start;margin:16px 0;padding:14px;border-radius:14px;background:#fff3d6">
+        <div aria-hidden="true" style="font-size:1.8rem;line-height:1">🧩</div>
+        <div><strong>Linangin ang kasanayan sa pagbasa</strong><p style="margin:6px 0 0">Subukan ang BASA BASIC sa pamamagitan ng mga gawaing may tunog, titik, pantig, salita, at pangungusap.</p></div>
+      </div>
+      <div class="about-feature" style="display:flex;gap:14px;align-items:flex-start;margin:16px 0;padding:14px;border-radius:14px;background:#e3f5e9">
+        <div aria-hidden="true" style="font-size:1.8rem;line-height:1">✅</div>
+        <div><strong>Subukan ang iyong pag-unawa</strong><p style="margin:6px 0 0">Sagutin ang mga tanong, suriin ang iyong mga sagot, at gamitin ang feedback upang malaman kung aling bahagi ang kailangan pang pag-igihan.</p></div>
+      </div>
+      <p class="muted" style="margin-top:18px">Inisyatiba at Konsepto ni <strong>Ma’am Laarnie</strong></p>
+      <div class="row"><button class="btn secondary" type="button" data-page="home">← Pangunahing Pahina</button></div>
+      <div class="row"><button class="btn" type="button" data-page="creditsPage">Pagkilala sa Proponent →</button></div>
     </section>
 
     <section class="card" id="encouragement" hidden>
@@ -320,7 +354,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
   <section class="card" id="quiz" hidden>
     <div class="eyebrow">Hakbang 3 · Pagsusulit</div>
     <h2>Pag-unawa sa binasa</h2>
-    <p class="muted">Piliin ang sagot sa bawat tanong. Ang score ay kakalkulahin sa browser na ito lamang sa demo.</p>
+    <p class="muted">Piliin ang sagot sa bawat tanong. Ang score ay kakalkulahin sa browser na ito lamang sa sesyong ito.</p>
     <form id="quizForm">
       <fieldset class="q"><legend>1. Saan naganap ang pangunahing pangyayari?</legend>
         <label class="option"><input type="radio" name="q0" value="0"> Sa palengke</label><label class="option"><input type="radio" name="q0" value="1"> Sa silid-aklatan ng paaralan</label><label class="option"><input type="radio" name="q0" value="2"> Sa istasyon ng tren</label><label class="option"><input type="radio" name="q0" value="3"> Sa bahay ng guro</label></fieldset>
@@ -359,7 +393,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
   <h2>Paano Gamitin ang PROJECT BASA</h2>
   <ol>
     <li><strong>Piliin ang iyong baitang.</strong> Sa pangunahing pahina, pindutin ang card ng Grade 7, 8, 9, o 10.</li>
-    <li><strong>Buksan ang babasahin.</strong> Piliin ang kuwentong nais basahin. Sa kasalukuyang prototype, sample lesson pa lamang ang mayroon para sa Grade 7.</li>
+    <li><strong>Buksan ang babasahin.</strong> Piliin ang kuwentong nais basahin. Piliin ang baitang at ang kuwentong nais basahin.</li>
     <li><strong>Basahin nang mabuti.</strong> Pansinin ang mahahalagang pangyayari, detalye, at mga salitang hindi pamilyar.</li>
     <li><strong>Subukan ang gawain.</strong> Sagutin ang mga tanong at basahin ang feedback upang malaman kung ano pa ang dapat balikan.</li>
     <li><strong>Humingi ng tulong kung kailangan.</strong> Maaari kang magtanong sa iyong guro o ARAL tutor.</li>
@@ -373,13 +407,24 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
     <h2>Privacy at ligtas na paggamit</h2>
     <ul>
       <li>Huwag ilagay ang iyong buong pangalan, tirahan, numero ng telepono, password, o iba pang personal na impormasyon.</li>
-      <li>Sa prototype na ito, hindi kailangan ng account o pangalan; ang score ay kinukuwenta sa browser at hindi ipinapadala ng code na ito sa server.</li>
+      <li>Sa portal na ito, hindi kailangan ng account o pangalan; ang score ay kinukuwenta sa browser at hindi ipinapadala ng code na ito sa server.</li>
       <li>Kapag inilagay na online, maaaring magtala ng ilang teknikal na impormasyon ang hosting provider, gaya ng IP address; kaya kailangang suriin muna ng guro ang platform at patakaran nito sa privacy.</li>
       <li>Gamitin ang portal sa gabay ng guro o tutor at ipaalam sa kanila kung may nakitang mali o hindi angkop na nilalaman.</li>
     </ul>
-    <p class="muted">Prototype pa lamang ito at kailangang masuri at mapahintulutan ng paaralan bago gamitin sa opisyal na ARAL session o ilathala sa internet.</p>
+    <p class="muted">Kailangang masuri at mapahintulutan ng paaralan ang mga nilalaman bago gamitin sa opisyal na ARAL session o ilathala sa internet.</p>
   <div class="row"><button class="btn secondary" type="button" data-page="home">← Pangunahing Pahina</button></div></section>
 
+<section id="basaBasicPage" class="card" hidden style="margin:18px auto;max-width:1100px">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+    <button type="button" class="basa-back-home" onclick="closeBasaBasic()">← Bumalik sa PROJECT BASA</button>
+    <span class="muted" style="font-size:.88rem">PROJECT BASA · BASA BASIC</span>
+  </div>
+  <p class="eyebrow">INTERAKTIBONG PAGBASA</p>
+  <h2>BASA BASIC</h2>
+  <p class="muted">Pumili ng makulay na antas at sagutin ang 20 item. Walang audio; maaaring basahin ng guro o tutor ang panuto kung kailangan. Piliin ang sagot at pindutin ang “Suriin ang sagot” para makita ang feedback.</p>
+  <div id="basaBasicLevels" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:16px 0"></div>
+  <div id="basaBasicActivity" aria-live="polite"></div>
+</section>
 <section id="basaVocabPage" class="card" hidden style="margin:18px auto;max-width:1100px">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px">
 <button type="button" class="basa-back-home" onclick="returnFromStandaloneVocab()">← Bumalik sa Simula</button><span class="muted">PROJECT BASA</span></div>
@@ -404,7 +449,10 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
   <div id="basaStory" style="display:none;margin-top:18px"></div>
 </section>
 </main>
-<footer>PROJECT BASA · Batayang Aralin sa Suri at Analisis ng Binabasa</footer>
+<footer id="basaReadingsLaunch" style="text-align:center;padding:18px 12px 24px">
+  <p class="home-credit">Inisyatiba at Konsepto ni <strong>Ma&#39;am Laarnie</strong></p>
+  <p class="notice-no-account">Hindi kailangan ng account o personal na detalye upang gamitin ang portal.</p>
+</footer>
 <script>
 const correct=[1,2,1,0,2,2,1,0,1,2];
 const explanations=[
@@ -434,9 +482,14 @@ const optionText=[
 let selectedGrade="7";
 const sections=["home","basaVocabPage","gradePage","aboutPortal","creditsPage","howToUse","encouragement","usageNotice","lesson","quiz","results"];
 function show(id){
+ // Iisang navigation state: kapag lumipat ng seksiyon, isara ang mga standalone na pahina.
  sections.forEach(s=>{const el=document.getElementById(s);if(el)el.hidden=s!==id;});
+ const basic=document.getElementById("basaBasicPage");if(basic)basic.hidden=true;
+ const vocab=document.getElementById("basaVocabPage");if(vocab)vocab.hidden=true;
  const vocabEntry=document.getElementById("vocabEntryCard");
- if(vocabEntry) vocabEntry.style.display=(id==="home")?"block":"none";
+ const basicEntry=document.getElementById("basaBasicEntryCard");
+ const readingsEntry=document.getElementById("basaReadingsLaunch");
+ [vocabEntry,basicEntry,readingsEntry].forEach(el=>{if(el)el.style.display=(id==="home")?"block":"none";});
  const library=document.getElementById("basaLibrary");
  if(library) library.style.display=(id==="basaLibrary")?"block":"none";
  const story=document.getElementById("basaStory");
@@ -484,12 +537,22 @@ const BASA_READINGS = [{"grade":7,"title":"Ang Nawawalang Tala","topic":"Pag-una
 function returnToBasaHome(){
   const library=document.getElementById('basaLibrary');
   const story=document.getElementById('basaStory');
+  const basic=document.getElementById('basaBasicPage');
+  const vocab=document.getElementById('basaVocabPage');
   if(story) story.style.display='none';
   if(library) library.style.display='none';
+  if(basic) basic.hidden=true;
+  if(vocab) vocab.hidden=true;
   sections.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=(id!=='home');});
+  // Laging ibalik ang mga entry card sa pangunahing pahina kapag bumabalik mula sa babasahin.
+  ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='block';});
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function openBasaLibrary(grade){
+  // Isara ang BASA BASIC at hiwalay na bokabularyo bago buksan ang listahan ng babasahin.
+  const basicPage=document.getElementById('basaBasicPage');if(basicPage)basicPage.hidden=true;
+  const vocabPage=document.getElementById('basaVocabPage');if(vocabPage)vocabPage.hidden=true;
+  ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
   const library=document.getElementById('basaLibrary');
   if(grade!==undefined && grade!==null){
     const selector=document.getElementById('basaGrade');
@@ -527,18 +590,18 @@ function escBasa(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<'
 const BASA_VOCAB = {"1":[["ang","pantukoy na ginagamit sa isang tao, bagay, o ideya","Ang bata ay nagbabasa."],["ng","salitang nagpapakita ng kaugnayan o pagmamay-ari","Kinuha niya ang aklat ng kapatid."],["sa","nagsasaad ng lugar, direksiyon, o pinag-uukulan","Nagpunta siya sa silid-aklatan."],["ay","salitang nag-uugnay sa paksa at sinasabi tungkol dito","Ang kuwento ay kawili-wili."],["at","nag-uugnay ng salita o ideya","May lapis at kuwaderno siya."],["mga","pantukoy sa pangmaramihang pangngalan","Maaga dumating ang mga mag-aaral."],["si","pantukoy bago ang pangalan ng tao","Si Lira ang unang sumagot."],["ni","nagpapakita ng pagmamay-ari o gumagawa ng kilos","Binasa ni Omar ang liham."],["na","nag-uugnay o naglalarawan depende sa gamit","May bagong aklat na dumating."],["ito","tumutukoy sa bagay o ideyang malapit sa nagsasalita","Ito ang talaan ng pangkat."],["siya","pamalit sa pangalan ng isang tao","Tahimik siya habang nag-iisip."],["ako","pamalit sa nagsasalita","Ako ang magdadala ng papel."]],"2":[["dahil","nagsasaad ng dahilan","Hindi siya dumalo dahil may sakit siya."],["ngunit","nagpapakita ng pagsalungat o pagkakaiba","Mahirap ang gawain, ngunit sinubukan nila."],["kaya","nag-uugnay ng dahilan at bunga","Umulan kaya ipinagpaliban ang laro."],["kung","nagsasaad ng kondisyon","Kung magtutulungan, matatapos ang gawain."],["kapag","nagsasaad kung kailan mangyayari ang isang bagay","Kapag natapos ang klase, magliligpit kami."],["habang","nagsasaad ng dalawang kilos na nagaganap sa magkaugnay na panahon","Nagtala siya habang nagmamasid."],["upang","nagsasaad ng layunin","Nagtipon sila upang magplano."],["bagaman","nagsasaad ng pagsalungat sa inaasahan","Bagaman pagod, tinapos niya ang tala."],["samantala","nagpapakita ng kasabay o ibang pangyayari","Nagsukat si Ana; samantala, nagtala si Ben."],["sapagkat","nagbibigay ng dahilan","Sinuri nila ang datos sapagkat mahalaga ang katumpakan."]],"3":[["dahilan","paliwanag kung bakit nangyari ang isang bagay","Hinahanap nila ang dahilan ng pagbaha."],["bunga","resulta ng isang kilos o pangyayari","Bunga ng pagtutulungan ang malinis na silid."],["suliranin","problema na kailangang unawain o lutasin","Ang kakulangan sa tubig ang suliranin."],["solusyon","paraan upang malutas ang problema","Nagpanukala sila ng solusyon sa basura."],["pasiya","piniling gawin matapos mag-isip","Pinag-usapan muna nila ang pasiya."],["tungkulin","gawaing inaasahang gagampanan","Tungkulin ng bawat isa ang magligpit."],["epekto","pagbabagong dulot ng isang kilos o pangyayari","Sinukat nila ang epekto ng paalala."],["karanasan","bagay na naranasan at maaaring mapag-aralan","Natutuhan niya mula sa karanasan."],["pagbabago","pagkakaiba ng kalagayan mula noon hanggang ngayon","Napansin nila ang pagbabago sa pampang."],["pananagutan","obligasyong panindigan ang kilos o gawain","Tinanggap niya ang pananagutan sa proyekto."],["layunin","nais makamit o dahilan ng isang gawain","Layunin ng liham na humingi ng aklat."],["pagkakataon","panahon o kalagayang nagbibigay-daan sa paggawa","Nagkaroon sila ng pagkakataong magpaliwanag."]],"4":[["pananaw","paraan ng pagtingin o pag-unawa sa isang usapin","Magkaiba ang pananaw ng dalawang pangkat."],["ebidensiya","impormasyong sumusuporta o sumusubok sa isang pahayag","Gumamit siya ng tala bilang ebidensiya."],["paninindigan","posisyong pinanghahawakan at ipinapaliwanag","Ipinaliwanag niya ang kaniyang paninindigan."],["paghihinuha","pagbuo ng konklusyon mula sa mga pahiwatig","Sa kilos niya, nakabuo kami ng paghihinuha."],["konklusyon","pasya o buod na nabuo matapos suriin ang impormasyon","Ibinatay nila sa tala ang konklusyon."],["implikasyon","posibleng kahihinatnan o kahulugan ng isang pahayag o pasiya","Sinuri nila ang implikasyon ng bagong tuntunin."],["pagpapasya","proseso ng pagpili matapos timbangin ang mga opsiyon","Kailangan ang maingat na pagpapasya."],["pagtataya","pagsusuri sa halaga, bisa, o kalidad ng isang bagay","Gumawa sila ng pagtataya sa mungkahi."],["pagpapahalaga","pagkilala sa halaga o kabuluhan ng isang bagay","Ipinakita nila ang pagpapahalaga sa kultura."],["paniniwala","ideyang itinuturing na totoo ng isang tao","Sinuri niya kung may batayan ang paniniwala."],["katwiran","dahilan na ginagamit upang ipaliwanag o ipagtanggol ang ideya","Naglahad siya ng katwiran para sa panukala."],["interpretasyon","paliwanag sa kahulugan ng teksto, datos, o pangyayari","Nagbigay ang klase ng interpretasyon sa tula."]]};
 
 function openStandaloneVocab(){
- const allIds=["home","basaVocabPage","gradePage","aboutPortal","creditsPage","howToUse","encouragement","usageNotice","lesson","quiz","results","basaLibrary"];
- allIds.forEach(id=>{const el=document.getElementById(id);if(!el)return;if(id==="basaLibrary"){el.style.display="none";}else{el.hidden=(id!=="basaVocabPage");}});
- const entry=document.getElementById("vocabEntryCard");if(entry)entry.style.display="none";
+ const allIds=["home","basaVocabPage","basaBasicPage","gradePage","aboutPortal","creditsPage","howToUse","encouragement","usageNotice","lesson","quiz","results","basaLibrary"];
+ allIds.forEach(id=>{const el=document.getElementById(id);if(!el)return;if(id==="basaLibrary")el.style.display="none";else el.hidden=(id!=="basaVocabPage");});
+ ["vocabEntryCard","basaBasicEntryCard","basaReadingsLaunch"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="none";});
  const story=document.getElementById("basaStory");if(story)story.style.display="none";
  const list=document.getElementById("basaList");if(list)list.style.display="none";
- renderStandaloneVocab(1);
- window.scrollTo({top:0,behavior:"smooth"});
+ renderStandaloneVocab(1);window.scrollTo({top:0,behavior:"smooth"});
 }
 function returnFromStandaloneVocab(){
  const page=document.getElementById("basaVocabPage");if(page)page.hidden=true;
+ const basic=document.getElementById("basaBasicPage");if(basic)basic.hidden=true;
  const home=document.getElementById("home");if(home)home.hidden=false;
- const entry=document.getElementById("vocabEntryCard");if(entry)entry.style.display="block";
+ ["vocabEntryCard","basaBasicEntryCard","basaReadingsLaunch"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="block";});
  const library=document.getElementById("basaLibrary");if(library)library.style.display="none";
  window.scrollTo({top:0,behavior:"smooth"});
 }
@@ -553,40 +616,6 @@ function renderStandaloneVocab(level){
 }
 function openBasaVocab(){openStandaloneVocab();}
 function backToBasaReadings(){returnFromStandaloneVocab();}
-function speakBasaWord(word){
- if(!('speechSynthesis' in window)||typeof SpeechSynthesisUtterance==='undefined'){
-  alert('Hindi suportado ng browser na ito ang audio. Subukan sa pinakabagong Google Chrome o Microsoft Edge.');
-  return;
- }
- const synth=window.speechSynthesis;
- synth.cancel();
- const u=new SpeechSynthesisUtterance(String(word||''));
- const voices=synth.getVoices?synth.getVoices():[];
- const filipino=voices.find(v=>/^fil(-|$)/i.test(v.lang))||voices.find(v=>/^tl(-|$)/i.test(v.lang));
- const phEnglish=voices.find(v=>/^en-PH$/i.test(v.lang));
- const fallback=filipino||phEnglish;
- if(fallback){u.voice=fallback;u.lang=fallback.lang;}else{u.lang='fil-PH';}
- u.rate=.78;u.pitch=1;u.volume=1;
- u.onerror=function(){
-  if(!fallback){
-   const alt=voices.find(v=>/^en(-|$)/i.test(v.lang));
-   if(alt){
-    const retry=new SpeechSynthesisUtterance(String(word||''));
-    retry.voice=alt;retry.lang=alt.lang;retry.rate=.78;retry.pitch=1;retry.volume=1;
-    synth.cancel();synth.speak(retry);
-   }else{
-    alert('Hindi available ang Filipino voice sa device na ito. Tingnan ang Chrome/Windows speech settings o mag-install ng Filipino text-to-speech voice.');
-   }
-  }else{
-   alert('Hindi naplay ang audio. Tingnan kung naka-mute ang device at kung may available na speech voice.');
-  }
- };
- synth.speak(u);
- // Some browsers need a voice list refresh before speech can play.
- if(!voices.length && synth.getVoices){
-  synth.onvoiceschanged=function(){synth.onvoiceschanged=null;};
- }
-}
 function renderBasaVocab(level){renderStandaloneVocab(level);}
 function openBasaStory(i){
  const bl=document.getElementById('basaList');if(bl)bl.style.display='none';
@@ -608,6 +637,31 @@ function gradeBasaQuiz(i){
  qs.forEach((q,j)=>{const picked=form.querySelector(`input[name="bq${j}"]:checked`);const entry=Array.isArray(r.key)?(r.key[j]||{}):{};let raw=q.answer??q.correct??q.key??entry.letter??entry.answer;let correct=-1;if(typeof raw==='number')correct=raw;else if(typeof raw==='string'&&/^[A-D]$/i.test(raw.trim()))correct=raw.trim().toUpperCase().charCodeAt(0)-65;else if(typeof raw==='string'&&/^\d+$/.test(raw.trim()))correct=Number(raw);const isCorrect=!!picked&&Number(picked.value)===correct;if(isCorrect)score++;const opts=q.options||q.choices||[];const right=(correct>=0&&correct<opts.length)?(typeof opts[correct]==='string'?opts[correct]:(opts[correct].text||opts[correct].option||'')):'Suriin muli ang teksto.';const explanation=q.explanation||q.rationale||entry.explanation||'Balikan ang bahaging may kaugnayan sa tanong.';details.push(`<div style="border:1px solid #dce6e0;border-radius:10px;padding:10px;margin:8px 0"><b>${j+1}. ${isCorrect?'Tama ang sagot':(!picked?'Walang sagot':'Balikan ang teksto')}</b>${!isCorrect?`<p><b>Tamang sagot (${letters[correct]||'—'}):</b> ${escBasa(right)}</p>`:''}<p><b>Paliwanag:</b> ${escBasa(explanation)}</p></div>`);});
  const pct=qs.length?Math.round(score/qs.length*100):0;const message=pct===100?'Napakahusay!':pct>=80?'Mahusay! Balikan ang ilang detalye.':pct>=60?'Magandang simula. Balikan ang mga bahaging may kaugnayan sa tanong.':'Basahin muli ang kuwento at hanapin ang mga detalyeng sumusuporta sa sagot.';document.getElementById('basaScore').innerHTML=`<div class="card" style="margin-top:16px"><h3>Iskor: ${score} / ${qs.length} (${pct}%)</h3><p>${message}</p><h3>Feedback sa bawat tanong</h3>${details.join('')}<button type="button" onclick="document.getElementById('basaQuiz').reset();document.getElementById('basaScore').innerHTML='';document.getElementById('basaQuiz').scrollIntoView({behavior:'smooth',block:'start'})">Subukang muli</button></div>`;
 }
+/* BASA BASIC: independent, keyboard-accessible interactive practice */
+const BASA_BASIC_DATA = [{"name":"Antas 1 — Tunog at Titik","desc":"Kilalanin ang titik at unang tunog.","items":[["Anong titik ang may tunog na /m/?",["b","l","m","s"],2,"Ang titik m ay may tunog na /m/."],["Anong titik ang may tunog na /s/?",["n","a","t","s"],3,"Ang titik s ay may tunog na /s/."],["Aling salita ang nagsisimula sa tunog na /b/?",["susi","lobo","bola","mesa"],2,"Ang bola ay nagsisimula sa tunog na /b/."],["Aling salita ang nagsisimula sa tunog na /l/?",["lata","mata","sabon","bata"],0,"Ang lata ay nagsisimula sa tunog na /l/."],["Aling salita ang nagsisimula sa tunog na /s/?",["sako","lima","mesa","buko"],0,"Ang sako ay nagsisimula sa tunog na /s/."],["Piliin ang titik na maririnig sa simula ng “mesa.”",["g","t","b","m"],3,"Nagsisimula sa m ang salitang mesa."],["Piliin ang titik na maririnig sa simula ng “bata.”",["b","s","k","d"],0,"Nagsisimula sa b ang salitang bata."],["Piliin ang titik na maririnig sa simula ng “tasa.”",["l","t","n","p"],1,"Nagsisimula sa t ang salitang tasa."],["Aling salita ang nagsisimula sa patinig na a?",["bata","aso","mesa","susi"],1,"Nagsisimula sa patinig na a ang aso."],["Aling salita ang nagsisimula sa patinig na i?",["ibon","tasa","mesa","lobo"],0,"Nagsisimula sa patinig na i ang ibon."],["Aling salita ang nagsisimula sa patinig na o?",["sako","ulan","bata","oras"],3,"Nagsisimula sa patinig na o ang oras."],["Aling salita ang nagsisimula sa patinig na u?",["buko","mesa","lata","usa"],3,"Nagsisimula sa patinig na u ang usa."],["Anong titik ang unang maririnig sa “sabon”?",["b","l","s","m"],2,"Nagsisimula sa s ang sabon."],["Anong titik ang unang maririnig sa “lima”?",["t","l","d","g"],1,"Nagsisimula sa l ang lima."],["Anong titik ang unang maririnig sa “gatas”?",["b","g","k","r"],1,"Nagsisimula sa g ang gatas."],["Aling pares ang parehong nagsisimula sa /m/?",["bata, bola","sako, tasa","lobo, sabon","mesa, mata"],3,"Ang mesa at mata ay parehong nagsisimula sa m."],["Aling pares ang parehong nagsisimula sa /b/?",["susi, sabon","lata, lima","bata, bola","mesa, mata"],2,"Ang bata at bola ay parehong nagsisimula sa b."],["Aling salita ang may unang tunog na /k/?",["tama","sama","kama","dama"],2,"Nagsisimula sa k ang kama."],["Aling salita ang may unang tunog na /p/?",["busa","pusa","musa","lusa"],1,"Nagsisimula sa p ang pusa."],["Aling salita ang may unang tunog na /r/?",["riles","barya","lamesa","silya"],0,"Nagsisimula sa r ang riles."]]},{"name":"Antas 2 — Pagbuo ng Pantig","desc":"Pag-ugnayin ang mga pantig upang mabuo ang salita.","items":[["Anong salita ang mabubuo sa ma + ta?",["tama","mata","mama","masa"],1,"Ang ma + ta ay mata."],["Anong salita ang mabubuo sa ba + ta?",["bata","taba","baba","basa"],0,"Ang ba + ta ay bata."],["Anong salita ang mabubuo sa sa + ko?",["sala","sako","siko","suka"],1,"Ang sa + ko ay sako."],["Anong salita ang mabubuo sa la + ta?",["luto","lima","lupa","lata"],3,"Ang la + ta ay lata."],["Anong salita ang mabubuo sa pu + sa?",["pusa","puso","pisa","pasa"],0,"Ang pu + sa ay pusa."],["Aling pantig ang nawawala: ma + __ = mata?",["la","ka","sa","ta"],3,"Ang nawawalang pantig ay ta."],["Aling pantig ang nawawala: ba + __ = bata?",["ma","ta","na","la"],1,"Ang nawawalang pantig ay ta."],["Anong huling bahagi ang kasama ng “sa” upang mabuo ang “sabon”?",["bon","ko","ma","ta"],0,"Ang sa + bon ay sabon."],["Aling pantig ang unang maririnig sa “mesa”?",["me","se","ma","sa"],0,"Ang unang pantig ng mesa ay me."],["Aling pantig ang huling maririnig sa “lima”?",["li","ma","mi","la"],1,"Ang huling pantig ng lima ay ma."],["Piliin ang tamang hati ng salitang “bata.”",["baat-a","b-ata","bat-a","ba-ta"],3,"Hinahati ang bata sa ba-ta."],["Piliin ang tamang hati ng salitang “mesa.”",["mes-a","me-sa","m-esa","mee-sa"],1,"Hinahati ang mesa sa me-sa."],["Piliin ang tamang hati ng salitang “susi.”",["s-usi","suu-si","su-si","sus-i"],2,"Hinahati ang susi sa su-si."],["Piliin ang tamang hati ng salitang “buko.”",["buk-o","b-uko","bu-ko","buu-ko"],2,"Hinahati ang buko sa bu-ko."],["Piliin ang tamang hati ng salitang “gatas.”",["g-atas","gaa-tas","ga-tas","gat-as"],2,"Hinahati ang gatas sa ga-tas."],["Aling salita ang may isang pantig?",["plato","mesa","trak","aklat"],2,"Ang trak ay may isang pantig. Ang me-sa, ak-lat, at pla-to ay may tig-dalawang pantig."],["Aling salita ang may apat na pantig?",["mesa","bata","sako","paaralan"],3,"Ang paaralan ay maaaring hatiin sa pa-a-ra-lan, na may apat na pantig."],["Anong salita ang mabubuo sa ba + hay?",["bahay-bata","buhay","bahaw","bahay"],3,"Ang ba + hay ay bahay."],["Anong salita ang mabubuo sa a + raw?",["rawa","araw-araw","araw","ara"],2,"Ang a + raw ay araw."],["Anong salita ang mabubuo sa ka + la + ba + sa?",["kalabasa","balakasa","kabasala","kalasa"],0,"Ang ka-la-ba-sa ay kalabasa."]]},{"name":"Antas 3 — Pagbasa ng mga Salita","desc":"Basahin at kilalanin ang mga salitang karaniwang ginagamit.","items":[["Aling salita ang kabaligtaran ng salitang malamig?",["mainit","maasim","matamis","malambot"],0,"Magkasalungat ang kahulugan ng malamig at mainit."],["Aling salita ang ginagamit sa pagsusulat?",["kutsara","unan","lapis","walis"],2,"Ginagamit ang lapis sa pagsusulat."],["Aling salita ang tumutukoy sa lugar na pinapasukan upang matuto?",["palengke","kusina","paaralan","hardin"],2,"Ang paaralan ay lugar ng pag-aaral."],["Aling salita ang ginagamit sa pagbabasa?",["sapatos","timba","aklat","plato"],2,"Ang aklat ay binabasa."],["Aling salita ang tumutukoy sa kasangkapan sa pag-upo?",["upuan","bubong","baso","pinto"],0,"Ang upuan ay kasangkapan sa pag-upo."],["Piliin ang salitang kapareho ng kahulugang “masaya.”",["maligaya","malungkot","pagod","gutom"],0,"Ang maligaya ay kasingkahulugan ng masaya."],["Ano ang kasalungat ng “malaki”?",["mahaba","mabigat","mataas","maliit"],3,"Ang kasalungat ng malaki ay maliit."],["Aling salita ang tumutukoy sa ginagawa ng mata?",["kumain","tumingin","tumakbo","sumulat"],1,"Tumingin ang ginagawa gamit ang mata."],["Aling salita ang tumutukoy sa pagkain sa umaga?",["almusal","tanghalian","hapunan","meryenda"],0,"Ang almusal ay pagkain sa umaga."],["Aling salita ang tumutukoy sa pag-aalaga ng halaman?",["pagtatanim","pagwawalis","paglalaba","pagluluto"],0,"Ang pagtatanim ay paglalagay at pag-aalaga ng halaman."],["Piliin ang wastong baybay.",["kaybigan","kaibegan","kaibighan","kaibigan"],3,"Tamang baybay ang kaibigan."],["Piliin ang wastong baybay.",["paaralanh","paaralan","paarallan","paraalan"],1,"Tamang baybay ang paaralan."],["Piliin ang wastong baybay.",["kalikasanin","kalikassan","kalikasan","kalikhasan"],2,"Tamang baybay ang kalikasan."],["Aling salita ang tumutukoy sa pagtutulungan?",["paglimot","pag-aaway","pag-iisa","bayanihan"],3,"Ang bayanihan ay pagtutulungan ng mga tao."],["Aling salita ang tumutukoy sa pagiging tapat?",["katamaran","kasiyahan","katapatan","kalungkutan"],2,"Ang katapatan ay pagiging totoo at hindi nandaraya."],["Aling salita ang may kaugnayan sa kalinisan?",["telebisyon","walis","laruan","radyo"],1,"Maaaring gamitin ang walis sa paglilinis."],["Ano ang kahulugan ng “matipid”?",["mahilig mag-aksaya","laging nagmamadali","ayaw makinig","maingat gumamit ng pera o bagay"],3,"Ang matipid ay maingat sa paggamit ng yaman."],["Ano ang kahulugan ng “masinop”?",["maayos at maingat","magulo","maingay","malikot"],0,"Ang masinop ay maayos at maingat sa pag-aasikaso."],["Aling salita ang tumutukoy sa taong tumutulong sa may sakit?",["karpintero","pintor","magsasaka","nars"],3,"Ang nars ay tumutulong sa pangangalaga ng pasyente."],["Aling salita ang tumutukoy sa pag-unawa sa binasa?",["pagtakbo","pag-unawa","pag-awit","pagtalon"],1,"Ang pag-unawa ay pagkuha ng kahulugan mula sa binasa."]]},{"name":"Antas 4 — Pagbasa ng Pangungusap","desc":"Basahin ang pangungusap at unawain ang mensahe.","items":[["“Maagang gumising si Lino upang hindi mahuli sa klase.” Bakit maagang gumising si Lino?",["Upang matulog muli","Upang maglaro buong araw","Upang hindi mahuli sa klase","Upang hindi pumasok"],2,"Ipinapakita ng pangungusap ang dahilan ng maagang paggising."],["“Diniligan ni Ana ang mga halaman tuwing umaga.” Ano ang ginawa ni Ana?",["Tinapakan ang mga halaman","Ipinagbili ang mga halaman","Diniligan ang mga halaman","Pinutol ang mga halaman"],2,"Diniligan ni Ana ang mga halaman."],["“Ibinahagi ni Omar ang kaniyang baon sa kaklaseng walang pagkain.” Anong ugali ang ipinakita ni Omar?",["Pagiging pabaya","Pagiging magagalitin","Pagiging madamot","Pagiging matulungin"],3,"Ipinakita niya ang pagtulong at pagbabahagi."],["“Inilagay ni Mila ang mga papel sa basurahan.” Ano ang ipinakikita nito?",["Pag-iwas sa gawain","Pag-aaksaya ng tubig","Pagsira sa gamit","Pagpapanatili ng kalinisan"],3,"Ang pagtatapon sa basurahan ay nakatutulong sa kalinisan."],["“Nag-aral si Ben bago ang pagsusulit kaya handa siyang sumagot.” Bakit handa si Ben?",["Nangopya siya","Nag-aral siya bago ang pagsusulit","Hindi niya binasa ang aralin","Hindi siya pumasok"],1,"Ang paghahanda sa pamamagitan ng pag-aaral ang dahilan."],["“Nakita ni Rosa ang gripo na umaagos kahit walang gumagamit. Isinara niya ito.” Ano ang ginawa ni Rosa?",["Umalis agad","Isinara ang gripo","Binuksan pa ang gripo","Naglaba ng damit"],1,"Isinara niya ang gripo upang hindi masayang ang tubig."],["“Naglinis ang magkakaklase ng silid-aralan bago umuwi.” Ano ang ginawa nila nang sama-sama?",["Naglaro sa ulan","Nagpinta ng bahay","Naglinis ng silid-aralan","Nagluto ng hapunan"],2,"Sama-sama silang naglinis ng silid-aralan."],["“Nang hindi maunawaan ni Joel ang salita, tinanong niya ang guro.” Ano ang mabuting ginawa ni Joel?",["Kinopya ang sagot","Humingi siya ng paglilinaw","Iniwan niya ang gawain","Nanghula siya agad"],1,"Ang pagtatanong ay paraan upang mas maunawaan ang aralin."],["“Maingat na tumawid si Nena sa tawiran habang nakatingin sa magkabilang panig.” Ano ang ipinakita niya?",["Pag-iingat sa daan","Paglalaro sa kalsada","Pagmamadali","Pagwawalang-bahala"],0,"Sinunod niya ang ligtas na paraan ng pagtawid."],["“Inayos ni Carlo ang mga aklat ayon sa laki.” Paano niya inayos ang mga aklat?",["Sa loob ng bag ng iba","Ayon sa kulay ng damit","Ayon sa laki","Nang nakapikit"],2,"Ang batayan ng pag-aayos ay ang laki."],["“Umulan nang malakas kaya nagdala si Pia ng payong.” Bakit nagdala siya ng payong?",["Dahil mainit ang araw","Dahil may pagsusulit","Dahil gusto niyang matulog","Dahil umulan nang malakas"],3,"Ang malakas na ulan ang dahilan ng pagdadala ng payong."],["“Hindi itinapon ni Marco ang bote; inilagay niya ito sa lalagyan ng mga recyclable.” Ano ang ipinakita niya?",["Wastong paghihiwalay ng basura","Pagsusunog ng basura","Pag-aaksaya ng pagkain","Pagdumi sa paligid"],0,"Inihiwalay niya ang bagay na maaaring i-recycle."],["“Nagpraktis araw-araw ang pangkat bago ang pagtatanghal.” Ano ang maaaring maging bunga nito?",["Hindi sila magkikita","Makakalimutan nila ang lahat","Mawawala ang entablado","Mas handa silang magtanghal"],3,"Ang regular na pagsasanay ay nakatutulong sa paghahanda."],["“Pinakinggan ni Lea ang paliwanag ng kaklase bago siya sumagot.” Anong asal ang ipinakita niya?",["Paggalang sa nagsasalita","Pagwawalang-bahala","Pagputol sa usapan","Pag-iingay"],0,"Ang pakikinig muna ay nagpapakita ng paggalang."],["“Nakita ng mga bata ang tuyong lupa sa hardin kaya nag-igib sila ng tubig.” Ano ang suliranin?",["Tuyong lupa sa hardin","Maraming laruan","Nawawalang aklat","Sirang bintana"],0,"Ang tuyong lupa ang suliraning nais nilang tugunan."],["“Tinapos ni Sela ang takdang-aralin bago manood ng palabas.” Ano ang inuna niya?",["Palabas","Paglalaro","Takdang-aralin","Pagtulog"],2,"Inuna ni Sela ang kaniyang gawain sa paaralan."],["“Nagpasalamat si Arman sa kapitbahay na tumulong magdala ng mga gamit.” Bakit siya nagpasalamat?",["Dahil tinulungan siya","Dahil nawala ang gamit","Dahil hindi siya pinansin","Dahil natalo siya"],0,"Nagpasalamat siya bilang pagkilala sa tulong na natanggap."],["“Tahimik na nagbasa ang mga mag-aaral habang may pagsusulit ang ibang klase.” Bakit sila nanatiling tahimik?",["Upang makatulog ang lahat","Upang hindi makaistorbo","Upang hindi matuto","Upang makagambala sa pagsusulit"],1,"Ang katahimikan ay paggalang sa ibang klaseng nagsusulit."],["“Pinili ni Dina ang muling basahin ang panuto nang hindi niya alam ang susunod na gagawin.” Ano ang angkop na hakbang ni Dina?",["Iwan ang gawain","Isara ang aklat","Hulaan ang lahat ng sagot","Basahin muli ang panuto"],3,"Makatutulong ang muling pagbasa sa pag-unawa sa panuto."],["“Nagtanim ang barangay ng mga puno sa tabi ng paaralan upang magkaroon ng lilim.” Ano ang layunin ng pagtatanim?",["Gawing madulas ang daan","Magkaroon ng lilim","Takpan ang mga bintana","Hadlangan ang pagpasok"],1,"Ang pangungusap ay nagsasaad na lilim ang layunin ng pagtatanim."]]}];
+let basaBasicCurrentLevel=0, basaBasicCurrentIndex=0, basaBasicAnswers={}, basaBasicSubmitted=false;
+function openBasaBasic(){
+ const ids=['home','gradePage','aboutPortal','creditsPage','howToUse','encouragement','usageNotice','lesson','quiz','results','basaLibrary','basaVocabPage','basaBasicPage'];
+ ids.forEach(id=>{const el=document.getElementById(id);if(el){if(id==='basaBasicPage')el.hidden=false;else if(id==='basaLibrary')el.style.display='none';else el.hidden=true;}});
+ ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
+ renderBasaBasicLevels(); selectBasaBasicLevel(0); window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeBasaBasic(){
+ const page=document.getElementById('basaBasicPage');if(page)page.hidden=true;
+ const vocab=document.getElementById('basaVocabPage');if(vocab)vocab.hidden=true;
+ const library=document.getElementById('basaLibrary');if(library)library.style.display='none';
+ sections.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=id!=='home';});
+ ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='block';});
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function renderBasaBasicLevels(){const host=document.getElementById('basaBasicLevels');if(!host)return;host.innerHTML=BASA_BASIC_DATA.map((lv,i)=>`<button type="button" class="basa-back-home" style="display:block;text-align:left;white-space:normal;background:${i===basaBasicCurrentLevel?'#174d3f':'#fff'};color:${i===basaBasicCurrentLevel?'#fff':'#174d3f'}" onclick="selectBasaBasicLevel(${i})"><strong>${escBasa(lv.name)}</strong><br><span style="font-size:.88rem;font-weight:400">${escBasa(lv.desc)} · 20 item</span></button>`).join('');}
+function selectBasaBasicLevel(level){basaBasicCurrentLevel=level;basaBasicCurrentIndex=0;basaBasicAnswers={};basaBasicSubmitted=false;renderBasaBasicLevels();renderBasaBasicItem();}
+function renderBasaBasicItem(){const host=document.getElementById('basaBasicActivity');if(!host)return;const lv=BASA_BASIC_DATA[basaBasicCurrentLevel],item=lv.items[basaBasicCurrentIndex];const group=Math.floor(basaBasicCurrentIndex/5)+1;const names=['Laro 1: Kilalanin','Laro 2: Piliin ang tama','Laro 3: Sanayin ang isip','Laro 4: Hamon sa pagbasa'];const chosen=basaBasicAnswers[basaBasicCurrentIndex];const completed=Object.keys(basaBasicAnswers).length;host.innerHTML=`<div class="card" style="border:1px solid #c9dfd2;background:#fff;margin-top:14px"><p class="eyebrow">${escBasa(lv.name)} · ${names[group-1]}</p><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>Item ${basaBasicCurrentIndex+1} sa 20</strong><span class="muted">Nasagutan: ${completed}/20</span></div><div style="height:7px;background:#e7eee9;border-radius:99px;margin:9px 0 18px;overflow:hidden"><div style="height:100%;width:${(basaBasicCurrentIndex+1)*5}%;background:#27835f"></div></div><h3 style="line-height:1.45">${escBasa(item[0])}</h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px;margin:16px 0">${item[1].map((o,i)=>`<button type="button" ${basaBasicSubmitted?'disabled':''} aria-pressed="${chosen===i}" onclick="chooseBasaBasicAnswer(${i})" style="padding:13px;border:2px solid ${chosen===i?'#087f5b':'#dce6e0'};border-radius:12px;background:${chosen===i?'#087f5b':'#fff'};color:${chosen===i?'#fff':'#202b27'};text-align:left;font:inherit;font-weight:${chosen===i?'700':'400'};cursor:pointer;box-shadow:${chosen===i?'0 0 0 3px rgba(8,127,91,.20)':'none'};transition:background .15s,border-color .15s"><span style="display:flex;align-items:center;gap:9px"><span style="display:inline-flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px;border-radius:8px;background:${chosen===i?'#fff':'#edf1f3'};color:${chosen===i?'#087f5b':'#334155'};font-weight:700">${String.fromCharCode(65+i)}</span><span style="flex:1">${escBasa(o)}</span></span></button>`).join('')}</div>${basaBasicSubmitted?`<div role="status" style="padding:12px;border-radius:10px;background:${chosen===item[2]?'#e9f7ed':'#fff4e5'}"><strong>${chosen===item[2]?'Tama ang sagot!':'Balikan at subukang muli.'}</strong><p style="margin:5px 0 0">${chosen!==item[2]?`Tamang sagot: ${escBasa(item[1][item[2]])}. `:''}${escBasa(item[3])}</p></div>`:''}<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:18px"><button type="button" class="basa-back-home" style="background:#fff;color:#174d3f" onclick="moveBasaBasic(-1)" ${basaBasicCurrentIndex===0?'disabled':''}>← Nakaraan</button>${basaBasicSubmitted?`<button type="button" class="basa-back-home" onclick="${basaBasicCurrentIndex===19?'finishBasaBasic()':'moveBasaBasic(1)'}">${basaBasicCurrentIndex===19?'Tingnan ang Iskor':'Susunod →'}</button>`:`<button type="button" class="basa-back-home" onclick="checkBasaBasicAnswer()" ${chosen===undefined?'disabled':''}>Suriin ang sagot</button>`}</div></div>`;}
+function chooseBasaBasicAnswer(i){if(basaBasicSubmitted)return;basaBasicAnswers[basaBasicCurrentIndex]=i;renderBasaBasicItem();}
+function checkBasaBasicAnswer(){if(basaBasicAnswers[basaBasicCurrentIndex]===undefined)return;basaBasicSubmitted=true;renderBasaBasicItem();}
+function moveBasaBasic(delta){basaBasicCurrentIndex=Math.max(0,Math.min(19,basaBasicCurrentIndex+delta));basaBasicSubmitted=false;renderBasaBasicItem();}
+function finishBasaBasic(){const lv=BASA_BASIC_DATA[basaBasicCurrentLevel];let score=0;lv.items.forEach((it,i)=>{if(basaBasicAnswers[i]===it[2])score++;});const pct=Math.round(score/20*100);const host=document.getElementById('basaBasicActivity');host.innerHTML=`<div class="card" style="margin-top:14px;text-align:center"><p class="eyebrow">TAPOS NA ANG PAGSASANAY</p><h2>Iskor: ${score} / 20 (${pct}%)</h2><p>${pct===100?'Napakahusay! Lahat ng sagot ay tama.':pct>=80?'Mahusay! Balikan ang ilang item upang lalo pang humusay.':pct>=60?'Magandang simula. Magpraktis pa at balikan ang mga paliwanag.':'Ipagpatuloy ang pagsasanay. Balikan ang mga item at humingi ng gabay kung kailangan.'}</p><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button type="button" class="basa-back-home" onclick="selectBasaBasicLevel(${basaBasicCurrentLevel})">Ulitin ang antas</button>${basaBasicCurrentLevel<3?`<button type="button" class="basa-back-home" onclick="selectBasaBasicLevel(${basaBasicCurrentLevel+1})">Susunod na antas →</button>`:''}<button type="button" class="basa-back-home" style="background:#fff;color:#174d3f" onclick="closeBasaBasic()">Bumalik sa PROJECT BASA</button></div></div>`;}
+
 </script>
 </body>
 </html>
