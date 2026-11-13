@@ -1099,15 +1099,16 @@ function gradeAngIlawBOW(){
 function resetAngIlawBOW(){const form=document.getElementById('angIlawBOWQuiz'),result=document.getElementById('angIlawBOWResults');if(form)form.reset();if(result)result.innerHTML='';}
 
 function resetBasaKompetensiNavigation(){
- // Laging magsimula sa pangunahing view ng BASA-KOMPETENSI.
- // Itago ang lahat ng binuksang babasahin upang hindi maiwan ang huling binasa.
+ // Iisang kumpletong reset para laging bumalik sa root view ng BASA-KOMPETENSI.
+ // Itago muna ang lahat ng passage at ibalik ang lahat ng navigation controls.
  ['basaKompetensiStoryDetail','mgaLihamStoryDetail','basaNewStory1','basaNewStory2','saBawatHiblaDetail'].forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=true;});
  const list=document.getElementById('basaKompetensiStoryList');if(list)list.hidden=false;
  const contents=document.getElementById('term1FolderContents');if(contents)contents.hidden=true;
  const folder=document.getElementById('term1FolderCard');if(folder){folder.hidden=false;folder.setAttribute('aria-expanded','false');}
+ const term2=document.getElementById('term2FolderCard');if(term2)term2.hidden=false;
  const gradePanel=document.getElementById('grade9BOWCollection');if(gradePanel)gradePanel.hidden=true;
  const skills=document.getElementById('kompetensiSkillsSummary');if(skills)skills.hidden=false;
- const picker=document.getElementById('kompetensiGradePicker');
+ const picker=document.getElementById('kompetensiGradePicker');if(picker)picker.hidden=false;
  const title=document.getElementById('kompetensiGradeTitle');if(title)title.hidden=false;
  const gradeTile=document.getElementById('grade9FolderCard');
  const grid=gradeTile?.parentElement;if(grid)grid.hidden=false;
