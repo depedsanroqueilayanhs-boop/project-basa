@@ -214,6 +214,42 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
 @media(prefers-reduced-motion:reduce){#basaBasicPage *{transition:none!important;scroll-behavior:auto!important}}
 </style>
 
+<style id="reading-skills-pair-layout">
+/* Preview-only: place the two foundational reading sections side by side. */
+.reading-skills-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+.reading-skill-inner{height:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:14px}
+.reading-skills-pair .basa-back-home{width:100%;justify-content:center;white-space:normal;text-align:center}
+@media(max-width:520px){.reading-skills-pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.reading-skills-pair .card{padding:14px!important}.reading-skills-pair .eyebrow{font-size:.72rem;line-height:1.35}.reading-skills-pair h3{font-size:1.02rem!important;line-height:1.3}.reading-skills-pair .muted{font-size:.88rem;line-height:1.5}.reading-skills-pair .basa-back-home{font-size:.82rem;padding:10px 8px}}
+</style>
+
+
+<style id="basa-kompetensi-colorful-preview">
+/* Preview-only color treatment for BASA-KOMPETENSI entry card. */
+#basaKompetensiEntryCard{margin-top:14px!important;padding:0!important;overflow:hidden!important;border:2px solid #f0b7d5!important;border-radius:22px!important;background:linear-gradient(135deg,#fff0f6 0%,#fff8df 28%,#e9f8ff 62%,#f0ffe9 100%)!important;box-shadow:0 10px 26px rgba(107,69,130,.13)!important}
+#basaKompetensiEntryCard .basa-kompetensi-colorful{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:clamp(18px,3vw,26px);background:#f3edff}
+#basaKompetensiEntryCard .basa-kompetensi-copy{flex:1;min-width:220px}
+#basaKompetensiEntryCard .basa-kompetensi-copy h3{margin:5px 0;color:#63368f;font-size:clamp(1.3rem,3vw,1.65rem);letter-spacing:.01em}
+#basaKompetensiEntryCard .basa-kompetensi-copy .eyebrow{color:#a04478;font-weight:800}
+#basaKompetensiEntryCard .basa-kompetensi-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border:0;border-radius:13px;background:linear-gradient(110deg,#6941a5,#2879b9,#16866f);color:#fff;font:700 14px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;box-shadow:0 4px 0 rgba(67,54,125,.16)}
+#basaKompetensiEntryCard .basa-kompetensi-button:focus-visible{outline:3px solid #f2b705;outline-offset:3px}
+</style>
+
+
+<style id="basa-kompetensi-color-refresh">
+/* Soft, distinct colors for grade folders; retain existing navigation and behavior. */
+#kompetensiGradePicker .grid > .card:nth-child(1){background:linear-gradient(145deg,#eaf5ff,#dcecff)!important;border:1px solid #a9cbed!important;color:#245b91!important;box-shadow:0 5px 14px rgba(57,112,164,.10)}
+#kompetensiGradePicker .grid > .card:nth-child(2){background:linear-gradient(145deg,#eafaf1,#d9f3e5)!important;border:1px solid #a8d9bd!important;color:#246747!important;box-shadow:0 5px 14px rgba(58,139,94,.10)}
+#kompetensiGradePicker .grid > #grade9FolderCard{background:linear-gradient(145deg,#f4edff,#e8ddff)!important;border:2px solid #b99be8!important;color:#5a398b!important;box-shadow:0 6px 16px rgba(111,75,164,.14)}
+#kompetensiGradePicker .grid > .card:nth-child(4){background:linear-gradient(145deg,#fff3e7,#ffe4cc)!important;border:1px solid #edbd91!important;color:#94531e!important;box-shadow:0 5px 14px rgba(190,119,56,.10)}
+#grade9BOWCollection{background:linear-gradient(145deg,#fbf7ff,#f3f0ff)!important;border:1px solid #d7c4f1!important}
+#term1FolderCard{background:linear-gradient(100deg,#fff2d9,#ffe5e8 55%,#eee5ff)!important;border:1px solid #e4b8c5!important;color:#67417f!important;box-shadow:0 5px 14px rgba(132,83,139,.12)}
+#term1FolderCard strong{color:#67417f!important}
+#basaKompetensiStoryList{border-color:#dfd1ef!important}
+</style>
+<style id="basa-kompetensi-status-style">
+#kompetensiGradePicker .grid>.card:not(#grade9FolderCard){min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+#kompetensiGradePicker .grid>.card:not(#grade9FolderCard) p{white-space:nowrap}
+</style>
 </head>
 <body>
 <main class="wrap">
@@ -243,20 +279,10 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
     </div>
   </div>
 </section>
-<!-- HOME ORDER: cover/Grade 7–10 cards, then BASA BASIC, then Kasanayan sa Pagbasa, then Mga Babasahin/footer. -->
-<section class="card" id="basaBasicEntryCard" style="display:block;margin-top:18px;margin-bottom:18px;border:2px solid #8ac9a7;background:linear-gradient(120deg,#f0fff5 0%,#e8f5ff 55%,#fff7df 100%);box-shadow:0 8px 22px rgba(24,91,68,.12);border-radius:20px;padding:22px">
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div style="flex:1;min-width:220px">
-      <p class="eyebrow">PAGHAHANDA SA PAGBASA</p>
-      <h3 style="margin:4px 0;color:#175847;font-size:1.45rem">📚 BASA BASIC</h3>
-      <p class="muted" style="margin:4px 0">Mga interaktibong gawain sa tunog, pantig, salita, at pangungusap. May apat na antas at 80 orihinal na item.</p>
-    </div>
-    <button type="button" class="basa-back-home" onclick="openBasaBasic()">Simulan ang BASA BASIC</button>
-  </div>
-</section>
-
-<section class="card" id="vocabEntryCard" style="margin-top:14px">
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<!-- HOME ORDER: KILALANIN ANG MGA SALITA, BASA BASIC, then colorful BASA-KOMPETENSI. -->
+<div id="readingSkillsPair" class="reading-skills-pair">
+<section class="card" id="vocabEntryCard" style="margin:0;border-radius:20px;padding:18px">
+  <div class="reading-skill-inner">
     <div>
       <p class="eyebrow">KASANAYAN SA PAGBASA</p>
       <h3 style="margin:4px 0">KILALANIN ANG MGA SALITA</h3>
@@ -266,6 +292,27 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
   </div>
 </section>
 
+<section class="card" id="basaBasicEntryCard" style="display:block;margin:0;border:2px solid #8ac9a7;background:linear-gradient(120deg,#f0fff5 0%,#e8f5ff 55%,#fff7df 100%);box-shadow:0 8px 22px rgba(24,91,68,.12);border-radius:20px;padding:18px">
+  <div class="reading-skill-inner">
+    <div>
+      <p class="eyebrow">PAGHAHANDA SA PAGBASA</p>
+      <h3 style="margin:4px 0;color:#175847;font-size:1.35rem">📚 BASA BASIC</h3>
+      <p class="muted" style="margin:4px 0">Mga interaktibong gawain sa tunog, pantig, salita, at pangungusap. May apat na antas at 80 orihinal na item.</p>
+    </div>
+    <button type="button" class="basa-back-home" onclick="openBasaBasic()">Simulan ang BASA BASIC</button>
+  </div>
+</section>
+</div>
+<section class="card" id="basaKompetensiEntryCard">
+  <div class="basa-kompetensi-colorful">
+    <div class="basa-kompetensi-copy">
+      <p class="eyebrow">PAGBASA AT PAG-UNAWA · BOW-ALIGNED</p>
+      <h3>BASA-KOMPETENSI</h3>
+      <p class="muted">Mga orihinal na babasahing nakaangkla sa mga kasanayan at kompetensi sa Filipino ayon sa BOW. Nakatutok sa literal, inferensiyal, at kritikal na pag-unawa.</p>
+    </div>
+    <button type="button" class="basa-kompetensi-button" onclick="openBasaKompetensi()">Buksan ang BASA-KOMPETENSI →</button>
+  </div>
+</section>
 <section class="card" id="gradePage" hidden>
     <div class="eyebrow">Hakbang 1</div>
     <h2>Pumili ng baitang</h2>
@@ -394,8 +441,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 28px
   <h2>Paano Gamitin ang PROJECT BASA</h2>
   <ol>
     <li><strong>Piliin ang iyong baitang.</strong> Sa pangunahing pahina, pindutin ang card ng Grade 7, 8, 9, o 10.</li>
-    <li><strong>Buksan ang babasahin.</strong> Pumili ng kuwentong nais basahin.
-Tiyaking angkop sa iyong baitang ang napiling kuwento.</li>
+    <li><strong>Buksan ang babasahin.</strong> Piliin ang kuwentong nais basahin. Piliin ang baitang at ang kuwentong nais basahin.</li>
     <li><strong>Basahin nang mabuti.</strong> Pansinin ang mahahalagang pangyayari, detalye, at mga salitang hindi pamilyar.</li>
     <li><strong>Subukan ang gawain.</strong> Sagutin ang mga tanong at basahin ang feedback upang malaman kung ano pa ang dapat balikan.</li>
     <li><strong>Humingi ng tulong kung kailangan.</strong> Maaari kang magtanong sa iyong guro o ARAL tutor.</li>
@@ -426,6 +472,238 @@ Tiyaking angkop sa iyong baitang ang napiling kuwento.</li>
   <p class="muted">Pumili ng makulay na antas at sagutin ang 20 item. Walang audio; maaaring basahin ng guro o tutor ang panuto kung kailangan. Piliin ang sagot at pindutin ang “Suriin ang sagot” para makita ang feedback.</p>
   <div id="basaBasicLevels" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:16px 0"></div>
   <div id="basaBasicActivity" aria-live="polite"></div>
+</section>
+<section id="basaKompetensiPage" class="card" hidden style="margin:18px auto;max-width:1100px;border:2px solid #d9c5f2;background:linear-gradient(145deg,#fbf7ff 0%,#f1f8ff 55%,#fffaf0 100%);border-radius:22px;padding:clamp(16px,3vw,28px)">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+    <button type="button" class="basa-back-home" onclick="closeBasaKompetensi()">← Bumalik sa Simula</button>
+    <span class="muted">PROJECT BASA · BOW-ALIGNED COLLECTION</span>
+  </div>
+  <p class="eyebrow">PAGBASA AT PAG-UNAWA</p>
+  <h2 style="color:#563a86">📚 BASA-KOMPETENSI</h2>
+
+  <div id="kompetensiSkillsSummary" class="card" style="margin-top:18px;padding:18px;border-top:5px solid #7b58b5;background:#fff">
+    <h3 style="margin-top:0">Tatlong Antas ng Pag-unawa</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px">
+      <div><strong style="color:#2876b5">Literal</strong><p class="muted" style="margin:5px 0 0">Pagkuha at pagkilala sa tuwirang impormasyong nakasaad sa teksto.</p></div>
+      <div><strong style="color:#7050a4">Inferensiyal</strong><p class="muted" style="margin:5px 0 0">Pagbuo ng hinuha batay sa mga pahiwatig at detalye sa teksto.</p></div>
+      <div><strong style="color:#b87525">Kritikal</strong><p class="muted" style="margin:5px 0 0">Pagsusuri, pagtataya, at pagbibigay-katwiran tungkol sa nilalaman ng teksto.</p></div>
+    </div>
+  </div>
+  <div id="kompetensiGradePicker" class="card" style="margin-top:16px;padding:16px;background:#fff">
+    <h3 id="kompetensiGradeTitle" style="margin-top:0">Mga Koleksiyon ayon sa Baitang</h3>
+    
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+      <div class="card" style="padding:12px;text-align:center"><strong>BAITANG 7</strong><p style="display:inline-block;margin:9px 0 0;padding:5px 9px;border-radius:999px;background:#f6c85f;color:#563600;font-size:.76rem;font-weight:800">ISINASAGAWA PA</p></div>
+      <div class="card" style="padding:12px;text-align:center"><strong>BAITANG 8</strong><p style="display:inline-block;margin:9px 0 0;padding:5px 9px;border-radius:999px;background:#f6c85f;color:#563600;font-size:.76rem;font-weight:800">ISINASAGAWA PA</p></div>
+      <div class="card" role="button" tabindex="0" onclick="toggleGrade9Collection()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleGrade9Collection()}" aria-expanded="false" aria-controls="grade9BOWCollection" id="grade9FolderCard" style="padding:12px;text-align:center;cursor:pointer;border:2px solid #bda9d8"><strong>BAITANG 9</strong><p class="muted" style="margin:7px 0 0;font-size:.78rem">Buksan ang folder →</p></div>
+      <div class="card" style="padding:12px;text-align:center"><strong>BAITANG 10</strong><p style="display:inline-block;margin:9px 0 0;padding:5px 9px;border-radius:999px;background:#f6c85f;color:#563600;font-size:.76rem;font-weight:800">ISINASAGAWA PA</p></div>
+    </div>
+    <div id="grade9BOWCollection" hidden style="margin-top:16px;padding:15px;border:1px solid #d9c9eb;border-radius:18px;background:#fbf9ff">
+      <button type="button" class="basa-back-home" onclick="backToKompetensiGrades()" style="margin-bottom:12px;background:#fff;color:#563a86;border-color:#bda9d8">← Bumalik sa mga baitang</button>
+      <button type="button" id="term1FolderCard" onclick="toggleTerm1Folder()" aria-expanded="false" aria-controls="term1FolderContents" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:15px;border:1px solid #d9c9eb;border-radius:14px;background:#fff;color:#563a86;cursor:pointer;font:inherit">
+        <span><strong style="display:block;font-size:1.05rem">📁 TERM 1</strong><span class="muted" style="display:block;font-size:.9rem;margin-top:4px">Baitang 9 · Mga babasahin</span></span>
+        <span aria-hidden="true">＋</span>
+      </button>
+      <div id="term2FolderCard" class="card" aria-label="Term 2, isinasagawa pa" style="margin-top:12px;padding:15px;border:1px solid #e6b85c;border-radius:14px;background:linear-gradient(110deg,#fff4cf,#ffe3b8);color:#80520b;box-shadow:0 5px 14px rgba(184,130,35,.12)">
+        <strong style="display:block;font-size:1.02rem;color:#80520b">📁 TERM 2</strong>
+        <span style="display:inline-flex;align-items:center;margin-top:8px;padding:5px 10px;border-radius:999px;background:#f6c85f;color:#563600;font-size:.82rem;font-weight:800;letter-spacing:.02em">ISINASAGAWA PA</span>
+      </div>
+      <div id="term1FolderContents" hidden style="margin-top:12px">
+      <button type="button" class="basa-back-home" onclick="backToTermFolders()" style="margin-bottom:12px;background:#fff;color:#563a86;border-color:#bda9d8">← Bumalik sa mga termino</button>
+      <div id="basaKompetensiStoryList" class="card" style="padding:16px;background:#fff;border:1px solid #e4d9f2">
+        <h3 style="margin-top:0;color:#563a86">Ang Ilaw sa Lumang Silid</h3>
+        <p class="muted">Maikling katha tungkol sa paghahanap ng katotohanan at pag-alala sa mga karanasan ng mamamayan. Paksa: Panahon ng Aktibismo at Batas Militar.</p>
+        <button type="button" class="basa-back-home" onclick="openAngIlawBOW()" style="background:#563a86;border-color:#563a86">Basahin at Sagutan →</button>
+        <hr style="border:0;border-top:1px solid #e4d9f2;margin:18px 0">
+        <h3 style="margin-top:0;color:#563a86">Mga Liham na Hindi Naipadala</h3>
+        <p class="muted">Kuwentong may nakapaloob na halimbawa ng liham-pakiusap. Paksa: Alaala, Kasaysayan, Paninindigan at Korespondensiya Opisyal.</p>
+        <button type="button" class="basa-back-home" onclick="openMgaLihamBOW()" style="background:#563a86;border-color:#563a86">Basahin at Sagutan →</button>
+        <hr style="border:0;border-top:1px solid #e4d9f2;margin:18px 0">
+        <h3 style="margin-top:0;color:#563a86">Mga Yapak sa Lumang Plasa</h3>
+        <p class="muted">Orihinal na maikling katha. Konteksto: Aktibismo at Batas Militar.</p>
+        <button type="button" class="basa-back-home" onclick="openBasaNewStory1()" style="background:#563a86;border-color:#563a86">Basahin at Sagutan →</button>
+        <hr style="border:0;border-top:1px solid #e4d9f2;margin:18px 0">
+        <h3 style="margin-top:0;color:#563a86">Ang Tinig sa Entablado</h3>
+        <p class="muted">Isang dula tungkol sa paninindigan at kalayaan. Konteksto: Aktibismo at Batas Militar.</p>
+        <button type="button" class="basa-back-home" onclick="openBasaNewStory2()" style="background:#563a86;border-color:#563a86">Basahin at Sagutan →</button>
+        <hr style="border:0;border-top:1px solid #e4d9f2;margin:18px 0">
+        <h3 style="margin-top:0;color:#563a86">Sa Bawat Hibla ng Bandila</h3>
+        <p class="muted">Orihinal na tula tungkol sa pagmamahal sa bayan, pagkakaisa, at pananagutang ipinakikita sa makabuluhang pagkilos.</p>
+        <button type="button" class="basa-back-home" onclick="openSaBawatHibla()" style="background:#563a86;border-color:#563a86">Basahin at Sagutan →</button>
+
+      </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="basaKompetensiStoryDetail" class="card" hidden style="margin-top:16px;padding:clamp(15px,3vw,24px);background:#fff;border:1px solid #e4d9f2">
+    <button type="button" class="basa-back-home" onclick="backToBasaKompetensiList()" style="background:#fff;color:#563a86;border-color:#bda9d8">← Bumalik sa mga babasahin</button>
+    <p class="eyebrow" style="margin-top:18px">FILIPINO 9 · UNANG TERMINO · MAIKLING KATHA</p>
+    <h2 style="color:#563a86">Ang Ilaw sa Lumang Silid</h2>
+    
+    <div class="basa-passage" style="max-width:78ch">
+      <p>Noong dekada 1970, sa isang maliit na bayan, nakatira si Lino kasama ang kaniyang ina. Tuwing gabi, nagsusulat ang kaniyang ama sa lumang mesa habang nakasindi ang gasera. Isa itong mamamahayag na naniniwalang mahalagang malaman ng mga tao ang katotohanan.</p>
+      <p>Isang gabi, maagang umuwi ang kaniyang ama. Bitbit nito ang ilang papel at tila may mabigat na iniisip.</p>
+      <p>“Ma, bakit hindi na nagsusulat si Tatay?” tanong ni Lino.</p>
+      <p>“May mga bagay na hindi na madaling sabihin sa panahong ito,” mahinang sagot ng kaniyang ina.</p>
+      <p>Napansin ni Lino na unti-unting nababawasan ang mga pahayagang dumarating sa kanilang tahanan. May mga balitang hindi na nailalathala at may mga taong natatakot magsalita.</p>
+      <p>Isang gabi, tinawag siya ng kaniyang ama. Ipinakita nito ang isang lumang kuwaderno.</p>
+      <p>“Anak, hindi lahat ng katotohanan ay nakasulat sa pahayagan. May mga kuwentong kailangang alalahanin upang hindi makalimutan ng susunod na salinlahi,” wika nito.</p>
+      <p>Simula noon, isinulat ni Lino sa kuwaderno ang mga kuwento ng kaniyang mga kapitbahay—ang kanilang pangamba, pag-asa, at pangarap.</p>
+      <p>Lumipas ang maraming taon. Naging guro si Lino. Sa bawat araling tinatalakay niya tungkol sa kasaysayan, lagi niyang ipinapaalala sa kaniyang mga mag-aaral na mahalagang alamin ang nakaraan upang higit na maunawaan ang kasalukuyan.</p>
+      <p>Sa kaniyang silid-aralan, may isang lumang gasera sa ibabaw ng estante. Hindi na ito ginagamit upang magbigay-liwanag sa gabi. Nagsisilbi na itong paalala na kahit sa panahong maraming bagay ang nais itago, may mga taong patuloy na naghahanap ng liwanag.</p>
+    </div>
+    <hr style="border:0;border-top:1px solid #e4d9f2;margin:22px 0">
+    <h3> Pagsasanay sa Pag-unawa </h3>
+    <p class="muted">Panuto: Basahin at unawain ang bawat tanong. Piliin ang titik ng pinakatamang sagot. Sagutan ang lahat ng bilang bago pindutin ang “Suriin ang mga Sagot.”</p>
+    <form id="angIlawBOWQuiz"></form>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button type="button" class="basa-back-home" onclick="gradeAngIlawBOW()" style="background:#563a86;border-color:#563a86">Suriin ang mga Sagot</button><button type="button" class="basa-back-home" onclick="resetAngIlawBOW()" style="background:#fff;color:#563a86;border-color:#bda9d8">Ulitin ang Pagsasanay</button></div>
+    <div id="angIlawBOWResults" aria-live="polite"></div>
+  </div>
+  <div id="mgaLihamStoryDetail" class="card" hidden style="margin-top:16px;padding:clamp(15px,3vw,24px);background:#fff;border:1px solid #e4d9f2">
+    <button type="button" class="basa-back-home" onclick="backToBasaKompetensiList()" style="background:#fff;color:#563a86;border-color:#bda9d8">← Bumalik sa mga babasahin</button>
+    <p class="eyebrow" style="margin-top:18px">FILIPINO 9 · UNANG TERMINO · KUWENTO AT LIHAM-PAKIUSAP</p>
+    <h2 style="color:#563a86">Mga Liham na Hindi Naipadala</h2>
+    <div class="basa-passage" style="max-width:78ch">
+      <p>Isang hapon, habang naglilinis ng lumang aparador, nakita ni Lira ang isang kahong kahoy na nakatago sa ilalim ng mga lumang damit. Maingat niya itong binuksan. Sa loob ay may mga larawan, lumang papel, at mga sobreng naninilaw na sa paglipas ng panahon.</p>
+      <p>Isa-isang binasa ni Lira ang mga liham. Napansin niyang walang pangalan ng tatanggap ang ilan sa mga sobre. May mga petsa rin ang mga ito na tumutukoy sa panahong maraming tao ang natatakot magsalita at magpahayag ng kanilang saloobin.</p>
+      <p>Sa isa sa mga liham, ikinuwento ng kaniyang lolo ang tungkol sa kaibigang si Andres. Madalas daw silang mag-usap tungkol sa kalagayan ng kanilang pamayanan at sa kahalagahan ng kalayaan. Ngunit isang araw, hindi na bumalik si Andres. Hindi na rin siya muling nakita ng mga taong nakakakilala sa kaniya.</p>
+      <p>Naisip ni Lira na mahalagang mapangalagaan ang mga liham dahil bahagi ang mga ito ng kasaysayan ng kanilang pamilya at pamayanan. Ipinakita niya ang mga ito sa kaniyang ina.</p>
+      <p>“Ma, maaari kaya nating ipaalam sa isang tanggapan na nangangalaga ng mga lumang dokumento ang tungkol dito?” tanong niya.</p>
+      <p>“Magandang ideya iyan. Maaari kang sumulat ng liham-pakiusap upang humingi ng gabay at tulong,” sagot ng kaniyang ina.</p>
+      <p>Humingi si Lira ng tulong sa kaniyang guro upang matutuhan ang wastong pagsulat nito. Ipinaliwanag ng guro na ang liham-pantanggapan ay isang pormal na paraan ng pakikipag-ugnayan sa isang opisina o opisyal. Kailangang malinaw, magalang, at angkop sa layunin ang nilalaman nito.</p>
+      <p>Ipinakita rin ng guro ang mahahalagang bahagi ng liham: pamuhatan, petsa, patunguhan, bating panimula, katawan ng liham, bating pangwakas, at lagda at pangalan.</p>
+      <p>Sinimulan ni Lira ang kaniyang liham.</p>
+      <div style="margin:16px 0;padding:16px;border:1px solid #e8dfc4;border-radius:12px;background:#fff9e9">
+        <h3 style="margin-top:0">Halimbawa ng Liham-Pakiusap</h3>
+        <p>Blg. 12, Barangay Malinaw<br>Bayan ng San Isidro</p>
+        <p>Nobyembre 13, 2026</p>
+        <p>G. Roberto M. Santos<br>Pinuno<br>Tanggapan ng Pangangalaga sa Kultura<br>Bayan ng San Isidro</p>
+        <p>Mahal na Ginoong Santos:</p>
+        <p>Magalang po akong sumusulat upang humingi ng inyong gabay tungkol sa wastong pangangalaga ng mga lumang liham at dokumentong pag-aari ng aming pamilya. Nais po naming mapanatili ang mga ito dahil naglalaman ang mga ito ng mahahalagang alaala at kuwento tungkol sa aming pamayanan.</p>
+        <p>Umaasa po akong mabibigyan ninyo kami ng impormasyon kung paano mapangangalagaan ang mga nasabing dokumento upang hindi masira at tuluyang mawala.</p>
+        <p>Maraming salamat po sa inyong panahon at konsiderasyon.</p>
+        <p>Lubos na gumagalang,</p>
+        <p>Lira S. Reyes</p>
+      </div>
+      <p>Matapos maisulat ang liham, muling tiningnan ni Lira ang mga lumang papel. Naunawaan niyang ang mga liham ay hindi lamang simpleng sulat. Bawat isa ay may dalang alaala, takot, at paninindigan ng isang taong nabuhay sa panahong mahirap ipaglaban ang sariling tinig.</p>
+      <p>Hindi man nakarating sa mga nilalayong tatanggap ang mga liham ng kaniyang lolo, nakarating naman ang kanilang mensahe sa isang bagong henerasyon. Sa pamamagitan ng pag-iingat sa mga ito at paghingi ng tulong sa tamang paraan, umaasa si Lira na mananatiling buhay ang mga kuwentong hindi dapat malimutan.</p>
+    </div>
+    <hr style="border:0;border-top:1px solid #e4d9f2;margin:22px 0">
+    <h3>Pagsasanay sa Pag-unawa</h3>
+    <p class="muted">Panuto: Piliin ang titik ng pinakatamang sagot. Sagutan ang lahat ng bilang bago pindutin ang “Suriin ang mga Sagot.”</p>
+    <form id="mgaLihamQuiz"></form>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <button type="button" class="basa-back-home" onclick="gradeMgaLiham()" style="background:#563a86;border-color:#563a86">Suriin ang mga Sagot</button>
+      <button type="button" class="basa-back-home" onclick="resetMgaLiham()" style="background:#fff;color:#563a86;border-color:#bda9d8">Ulitin ang Pagsasanay</button>
+    </div>
+    <div id="mgaLihamResults" aria-live="polite"></div>
+  </div>
+
+  <div id="basaNewStory1" class="card" hidden style="margin-top:16px;padding:clamp(15px,3vw,24px);background:#fff;border:1px solid #e4d9f2">
+    <button type="button" class="basa-back-home" onclick="backToBasaKompetensiList()" style="background:#fff;color:#563a86;border-color:#bda9d8">← Bumalik sa mga babasahin</button>
+    <p class="eyebrow" style="margin-top:18px">FILIPINO 9 · UNANG TERMINO · BOW-ALIGNED</p>
+    <h2 style="color:#563a86">Mga Yapak Sa Lumang Plasa</h2>
+    <div class="basa-passage" style="max-width:78ch"><p>Tuwing hapon, dumaraan si Nestor sa lumang plasa bago umuwi mula sa paaralan. Paborito niyang maupo sa ilalim ng malaking punong acacia habang pinagmamasdan ang mga taong nagdaraan. Para sa kaniya, ang plasa ay isang ordinaryong lugar lamang kung saan naglalaro ang mga bata at nagpapahinga ang matatanda.</p>
+<p>Ngunit nagbago ang kaniyang pananaw nang mapansin niyang unti-unting tumatahimik ang kanilang bayan.</p>
+<p>Isang araw, nadatnan niyang nag-uusap ang kaniyang lolo at ang matandang si Mang Temyong sa may bangko.</p>
+<p>“Hindi na tulad ng dati ang ating plasa,” sabi ni Mang Temyong.</p>
+<p>“Bakit po?” tanong ni Nestor.</p>
+<p>“Dati, dito nagtitipon ang mga tao upang magpalitan ng kuro-kuro. May mga talakayan tungkol sa kalagayan ng bayan, mga suliranin sa paaralan, at mga pangangailangan ng mga mamamayan.”</p>
+<p>Napatingin si Nestor sa paligid. Wala siyang nakitang pangkat ng mga taong nag-uusap. Iilan lamang ang nakaupo at karamihan ay nagmamadaling umuwi.</p>
+<p>Ikinuwento ng kaniyang lolo na noong mga nakaraang taon, may mga kabataang nagtitipon sa plasa upang ipahayag ang kanilang saloobin. Nais nilang marinig ang hinaing ng mga manggagawa, magsasaka, at karaniwang mamamayan. Ngunit dumating ang panahong naging maingat ang mga tao sa kanilang mga sinasabi.</p>
+<p>May mga paksang iniiwasang pag-usapan. May mga pahayagang hindi na mabasa ng mga mamamayan. May ilan ding natakot na makilahok sa mga pagtitipon.</p>
+<p>“Lolo, masama po bang magtanong tungkol sa nangyayari sa ating bayan?” maingat na tanong ni Nestor.</p>
+<p>Umiling ang matanda.</p>
+<p>“Hindi masama ang magtanong, apo. Ang mahalaga ay marunong kang magsuri, makinig, at umunawa. Hindi lahat ng naririnig ay totoo, at hindi rin lahat ng pananahimik ay nangangahulugang walang suliranin.”</p>
+<p>Kinagabihan, binuksan ni Nestor ang kaniyang kuwaderno. Isinulat niya ang mga kuwentong narinig mula sa kaniyang lolo. Itinala rin niya ang mga tanong na nais niyang masagot tungkol sa kanilang pamayanan.</p>
+<p>Makalipas ang ilang araw, ipinakita niya sa kaniyang guro ang kaniyang isinulat. Pinayuhan siya nitong magbasa ng iba&#x27;t ibang sanggunian at alamin ang konteksto ng mga pangyayaring naganap sa kanilang kasaysayan.</p>
+<p>Lumipas ang maraming taon. Naging bahagi si Nestor ng isang pangkat na nangangalap ng mga kuwento ng matatandang mamamayan. Hindi niya layuning baguhin ang nakaraan o sisihin ang sinuman. Nais lamang niyang mapanatili ang mga karanasang maaaring makatulong sa susunod na salinlahi.</p>
+<p>Minsan, muli siyang bumalik sa lumang plasa. Nakita niyang may mga batang naglalaro at may matatandang nagkukuwentuhan sa ilalim ng acacia.</p>
+<p>Napangiti siya.</p>
+<p>Naisip niyang ang isang lugar ay hindi lamang nasusukat sa laki ng mga gusali o dami ng taong dumaraan dito. May halaga rin ito dahil sa mga tinig, alaala, at karanasang iniwan ng mga taong minsang naging bahagi nito.</p>
+<p>Sa bawat yapak sa lumang plasa, may kuwentong naghihintay na muling pakinggan.</p></div>
+    <hr style="border:0;border-top:1px solid #e4d9f2;margin:22px 0">
+    <h3>Pagsasanay sa Pag-unawa</h3>
+    <form id="basaNewQuiz1"></form>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <button type="button" class="basa-back-home" onclick="gradeBasaNewStory1()" style="background:#563a86;border-color:#563a86">Suriin ang mga Sagot</button>
+      <button type="button" class="basa-back-home" onclick="resetBasaNewStory1()" style="background:#fff;color:#563a86;border-color:#bda9d8">Ulitin ang Pagsasanay</button>
+    </div>
+    <div id="basaNewResults1" aria-live="polite"></div>
+  </div>
+  <div id="basaNewStory2" class="card" hidden style="margin-top:16px;padding:clamp(15px,3vw,24px);background:#fff;border:1px solid #e4d9f2">
+    <button type="button" class="basa-back-home" onclick="backToBasaKompetensiList()" style="background:#fff;color:#563a86;border-color:#bda9d8">← Bumalik sa mga babasahin</button>
+    <p class="eyebrow" style="margin-top:18px">FILIPINO 9 · UNANG TERMINO · BOW-ALIGNED</p>
+    <h2 style="color:#563a86">Ang Tinig Sa Entablado</h2>
+    <div class="basa-passage" style="max-width:78ch"><h3>MGA TAUHAN</h3>
+<p>MIRA – Mag-aaral na sumulat ng dulang tungkol sa kalayaan.</p>
+<p>JUN – Kaibigan ni Mira; maingat at nag-aalala sa maaaring mangyari.</p>
+<p>LINO – Kasapi ng pangkat sa pagtatanghal; naniniwalang mahalaga ang pagsasabi ng katotohanan.</p>
+<p>GNG. ELENA – Guro at tagapayo ng pangkat.</p>
+<p>TAGAPAGSALAYSAY – Nagbibigay ng konteksto sa mga pangyayari.</p>
+<p><strong>TAGPUAN:</strong> Sa loob ng isang lumang paaralan, ilang araw bago ang pagtatanghal ng isang dulang pampaaralan.</p>
+<h3>UNANG TAGPO: ANG ISKRIP</h3>
+<p><em>(Makikita sa entablado ang isang mesa, ilang papel, at mga upuan. Abalang binabasa ni Mira ang kaniyang iskrip. Nasa tabi niya sina Jun at Lino.)</em></p>
+<p><strong>TAGAPAGSALAYSAY:</strong> Sa panahong maraming mamamayan ang nag-iingat sa kanilang mga salita at kilos, may isang pangkat ng kabataan na naghahanda ng pagtatanghal. Hindi lamang ito karaniwang dula. Nais nilang iparating ang kahalagahan ng kalayaan at paninindigan.</p>
+<p><strong>MIRA:</strong> Ito na ang huling bahagi ng iskrip. Ang pangunahing tauhan ay haharap sa maraming tao at magsasalita tungkol sa karapatan nilang magpahayag.</p>
+<p><strong>LINO:</strong> Maganda iyon. Dapat marinig ng mga tao ang mensahe. Hindi naman kailangang sumigaw para maipakita ang paninindigan.</p>
+<p><strong>JUN:</strong> Pero paano kung hindi magustuhan ng mga namamahala ang ating pagtatanghal? Alam naman nating may mga paksang kailangang pag-ingatan.</p>
+<p><strong>MIRA:</strong> Nauunawaan ko ang pangamba mo, Jun. Pero kung aalisin natin ang lahat ng mahahalagang bahagi, ano pa ang saysay ng dulang ito?</p>
+<p><strong>JUN:</strong> Hindi ko sinasabing itigil natin. Gusto ko lang na maging ligtas tayong lahat.</p>
+<p><strong>LINO:</strong> Pareho naman kayong may punto. Maaari tayong maging maingat nang hindi isinusuko ang mensahe.</p>
+<p><strong>GNG. ELENA:</strong> Narinig ko ang inyong pinag-uusapan. Tandaan ninyo, ang paninindigan ay hindi lamang nasusukat sa lakas ng boses. Nakikita rin ito sa pagiging responsable sa bawat salitang binibitawan.</p>
+<h3>IKALAWANG TAGPO: ANG PAG-AALINLANGAN</h3>
+<p><em>(Hawak ni Gng. Elena ang isang kopya ng iskrip.)</em></p>
+<p><strong>GNG. ELENA:</strong> May ilang bahagi rito na maaaring bigyang-kahulugan sa iba&#x27;t ibang paraan. Sigurado ba kayong nauunawaan ninyo ang mensaheng nais ninyong iparating?</p>
+<p><strong>MIRA:</strong> Opo. Hindi po namin layuning manira ng sinuman. Gusto lamang naming ipakita na mahalaga ang karapatan ng bawat tao na mag-isip at magpahayag.</p>
+<p><strong>JUN:</strong> Gng. Elena, maaari po bang baguhin ang ilang linya? Baka masyadong tuwiran ang dating.</p>
+<p><strong>LINO:</strong> Kung babaguhin po natin, sana manatili ang diwa ng dula.</p>
+<p><strong>GNG. ELENA:</strong> Mahalaga ang inyong mga mungkahi. Ang isang manunulat ay kailangang marunong makinig at magsuri. Ngunit kailangan din niyang malaman kung aling bahagi ng kaniyang mensahe ang hindi dapat mawala.</p>
+<p><strong>MIRA:</strong> Kung gayon, maaari po nating ayusin ang paraan ng pagpapahayag nang hindi binabago ang pangunahing diwa.</p>
+<p><strong>GNG. ELENA:</strong> Tama. Ang kalayaan sa pagpapahayag ay may kaakibat na pananagutan. Hindi ito pahintulot upang manakit, kundi pagkakataong maglahad ng ideya nang may paggalang at katwiran.</p>
+<h3>IKATLONG TAGPO: ANG PAGTATANGHAL</h3>
+<p><em>(Nasa entablado na ang pangkat. May simpleng telon sa likuran. Nakaharap sa mga manonood ang mga tauhan.)</em></p>
+<p><strong>TAGAPAGSALAYSAY:</strong> Dumating ang araw ng pagtatanghal. Hindi nila alam kung paano tatanggapin ng mga manonood ang kanilang mensahe. Gayunman, pinili nilang ituloy ang dula nang may pag-iingat at paninindigan.</p>
+<p><strong>MIRA:</strong> (Bilang pangunahing tauhan sa dula) May mga panahong ang katahimikan ay nagmumukhang pinakamadaling piliin. Ngunit paano natin maipagtatanggol ang ating mga karapatan kung hindi natin nauunawaan ang kahalagahan ng mga ito?</p>
+<p><strong>LINO:</strong> (Lalapit sa gitna ng entablado) Ang kalayaan ay hindi lamang para sa iilan. Ito ay karapatang dapat kilalanin at igalang. Kasabay nito, tungkulin nating gamitin ito nang may pananagutan.</p>
+<p><strong>JUN:</strong> (Dahan-dahang haharap sa mga manonood) Ang takot ay maaaring magpatahimik sa isang tao. Ngunit maaari rin itong maging dahilan upang mas pag-isipan niya ang kaniyang mga pasiya. Hindi lahat ng katahimikan ay pagsang-ayon, at hindi lahat ng pagsasalita ay kawalan ng pag-iingat.</p>
+<p><strong>MIRA:</strong> Kung may tinig tayong kayang magpahayag ng katotohanan, gamitin natin ito upang magmulat, hindi upang manakit. Sapagkat ang kalayaan ay may saysay lamang kung kinikilala rin natin ang kalayaan ng iba.</p>
+<p><strong>TAGAPAGSALAYSAY:</strong> Hindi nila alam kung gaano kalawak ang magiging epekto ng kanilang pagtatanghal. Ngunit sa araw na iyon, natutuhan nilang ang paninindigan ay hindi nangangahulugang kawalan ng takot. Ito ay ang kakayahang kumilos nang may pag-unawa, tapang, at pananagutan.</p>
+<p><em>(Yuyuko ang lahat ng tauhan bilang pagtatapos.)</em></p>
+<h3>WAKAS</h3></div>
+    <hr style="border:0;border-top:1px solid #e4d9f2;margin:22px 0">
+    <h3>Pagsasanay sa Pag-unawa</h3>
+    <form id="basaNewQuiz2"></form>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <button type="button" class="basa-back-home" onclick="gradeBasaNewStory2()" style="background:#563a86;border-color:#563a86">Suriin ang mga Sagot</button>
+      <button type="button" class="basa-back-home" onclick="resetBasaNewStory2()" style="background:#fff;color:#563a86;border-color:#bda9d8">Ulitin ang Pagsasanay</button>
+    </div>
+    <div id="basaNewResults2" aria-live="polite"></div>
+  </div>
+
+  <div id="saBawatHiblaDetail" class="card" hidden style="margin-top:16px;padding:clamp(15px,3vw,24px);background:#fff;border:1px solid #e4d9f2">
+    <button type="button" class="basa-back-home" onclick="backToBasaKompetensiList()" style="background:#fff;color:#563a86;border-color:#bda9d8">← Bumalik sa mga babasahin</button>
+    <p class="eyebrow" style="margin-top:18px">FILIPINO 9 · UNANG TERMINO · TULA</p>
+    <h2 style="color:#563a86">Sa Bawat Hibla ng Bandila</h2>
+    <div class="basa-passage" style="max-width:78ch">
+      <p>Sa tuwing bandila'y marahang iwinawagayway,<br>May kuwentong nakatago sa bawat kulay.<br>Hindi lamang telang sa hangin ay sumasayaw,<br>Kundi alaala ng bayang may pinagdaanang sigaw.</p>
+      <p>Sa pula, may tapang ng pusong di sumusuko,<br>Sa bughaw, may payapang mithiin ng bawat tao.<br>Sa puti, may pag-asang nais panatilihin,<br>Sa araw at bituin, may pangarap na minimithi.</p>
+      <p>Ngunit hindi sapat ang awit sa pagdiriwang,<br>O pagtayo nang tuwid habang ito'y itinataas.<br>Ang pag-ibig sa bayan ay hindi lamang sinasambit,<br>Ito'y nakikita sa gawa, sa isip, at sa dibdib.</p>
+      <p>Sa kamay na tumutulong sa kapwang nangangailangan,<br>Sa tinig na nagsasabi ng tama at katotohanan,<br>Sa kabataang nag-aaral upang may maibahagi,<br>Sa mamamayang may malasakit sa kapwa at paligid.</p>
+      <p>May mga hiblang madaling mapigtas sa kapabayaan,<br>Kung ang pagkakaisa'y mapalitan ng alitan.<br>May mga kulay na tila mawawalan ng ningning,<br>Kung ang dangal ng bayan ay hindi natin kikilalanin.</p>
+      <p>Kaya sa bawat pagtaas ng bandilang minamahal,<br>Isaisip ang tungkuling hindi dapat ipagpaliban.<br>Ang bayan ay hindi lamang lupaing tinubuan,<br>Ito'y tahanang sama-samang dapat pangalagaan.</p>
+    </div>
+    <hr style="border:0;border-top:1px solid #e4d9f2;margin:22px 0">
+    <h3 style="color:#563a86">Pagsasanay sa Pag-unawa</h3>
+    <p class="muted">Piliin ang titik ng pinakatamang sagot sa bawat tanong.</p>
+    <form id="saBawatHiblaQuiz"></form>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <button type="button" class="basa-back-home" onclick="gradeSaBawatHibla()" style="background:#563a86;border-color:#563a86">Suriin ang mga Sagot</button>
+      <button type="button" class="basa-back-home" onclick="resetSaBawatHibla()" style="background:#fff;color:#563a86;border-color:#bda9d8">Ulitin ang Pagsasanay</button>
+    </div>
+    <div id="saBawatHiblaResults" aria-live="polite"></div>
+  </div>
 </section>
 <section id="basaVocabPage" class="card" hidden style="margin:18px auto;max-width:1100px">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px">
@@ -482,7 +760,7 @@ const optionText=[
 ["Tingnan lamang kung gaano kabilis itong natapos","Bilangin ang mga pahina","Ipaliwanag ang mahahalagang pangyayari at sagutin ang mga tanong","Kabisaduhin lamang ang pamagat"]
 ];
 let selectedGrade="7";
-const sections=["home","basaVocabPage","gradePage","aboutPortal","creditsPage","howToUse","encouragement","usageNotice","lesson","quiz","results"];
+const sections=["home","basaKompetensiPage","basaVocabPage","gradePage","aboutPortal","creditsPage","howToUse","encouragement","usageNotice","lesson","quiz","results"];
 function show(id){
  // Iisang navigation state: kapag lumipat ng seksiyon, isara ang mga standalone na pahina.
  sections.forEach(s=>{const el=document.getElementById(s);if(el)el.hidden=s!==id;});
@@ -491,7 +769,8 @@ function show(id){
  const vocabEntry=document.getElementById("vocabEntryCard");
  const basicEntry=document.getElementById("basaBasicEntryCard");
  const readingsEntry=document.getElementById("basaReadingsLaunch");
- [vocabEntry,basicEntry,readingsEntry].forEach(el=>{if(el)el.style.display=(id==="home")?"block":"none";});
+ const kompetensiEntry=document.getElementById("basaKompetensiEntryCard");
+ [vocabEntry,basicEntry,readingsEntry,kompetensiEntry].forEach(el=>{if(el)el.style.display=(id==="home")?"block":"none";});
  const library=document.getElementById("basaLibrary");
  if(library) library.style.display=(id==="basaLibrary")?"block":"none";
  const story=document.getElementById("basaStory");
@@ -547,14 +826,14 @@ function returnToBasaHome(){
   if(vocab) vocab.hidden=true;
   sections.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=(id!=='home');});
   // Laging ibalik ang mga entry card sa pangunahing pahina kapag bumabalik mula sa babasahin.
-  ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='block';});
+  ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch','basaKompetensiEntryCard'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='block';});
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function openBasaLibrary(grade){
   // Isara ang BASA BASIC at hiwalay na bokabularyo bago buksan ang listahan ng babasahin.
   const basicPage=document.getElementById('basaBasicPage');if(basicPage)basicPage.hidden=true;
   const vocabPage=document.getElementById('basaVocabPage');if(vocabPage)vocabPage.hidden=true;
-  ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
+  ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch','basaKompetensiEntryCard'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
   const library=document.getElementById('basaLibrary');
   if(grade!==undefined && grade!==null){
     const selector=document.getElementById('basaGrade');
@@ -592,9 +871,9 @@ function escBasa(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<'
 const BASA_VOCAB = {"1":[["ang","pantukoy na ginagamit sa isang tao, bagay, o ideya","Ang bata ay nagbabasa."],["ng","salitang nagpapakita ng kaugnayan o pagmamay-ari","Kinuha niya ang aklat ng kapatid."],["sa","nagsasaad ng lugar, direksiyon, o pinag-uukulan","Nagpunta siya sa silid-aklatan."],["ay","salitang nag-uugnay sa paksa at sinasabi tungkol dito","Ang kuwento ay kawili-wili."],["at","nag-uugnay ng salita o ideya","May lapis at kuwaderno siya."],["mga","pantukoy sa pangmaramihang pangngalan","Maaga dumating ang mga mag-aaral."],["si","pantukoy bago ang pangalan ng tao","Si Lira ang unang sumagot."],["ni","nagpapakita ng pagmamay-ari o gumagawa ng kilos","Binasa ni Omar ang liham."],["na","nag-uugnay o naglalarawan depende sa gamit","May bagong aklat na dumating."],["ito","tumutukoy sa bagay o ideyang malapit sa nagsasalita","Ito ang talaan ng pangkat."],["siya","pamalit sa pangalan ng isang tao","Tahimik siya habang nag-iisip."],["ako","pamalit sa nagsasalita","Ako ang magdadala ng papel."]],"2":[["dahil","nagsasaad ng dahilan","Hindi siya dumalo dahil may sakit siya."],["ngunit","nagpapakita ng pagsalungat o pagkakaiba","Mahirap ang gawain, ngunit sinubukan nila."],["kaya","nag-uugnay ng dahilan at bunga","Umulan kaya ipinagpaliban ang laro."],["kung","nagsasaad ng kondisyon","Kung magtutulungan, matatapos ang gawain."],["kapag","nagsasaad kung kailan mangyayari ang isang bagay","Kapag natapos ang klase, magliligpit kami."],["habang","nagsasaad ng dalawang kilos na nagaganap sa magkaugnay na panahon","Nagtala siya habang nagmamasid."],["upang","nagsasaad ng layunin","Nagtipon sila upang magplano."],["bagaman","nagsasaad ng pagsalungat sa inaasahan","Bagaman pagod, tinapos niya ang tala."],["samantala","nagpapakita ng kasabay o ibang pangyayari","Nagsukat si Ana; samantala, nagtala si Ben."],["sapagkat","nagbibigay ng dahilan","Sinuri nila ang datos sapagkat mahalaga ang katumpakan."]],"3":[["dahilan","paliwanag kung bakit nangyari ang isang bagay","Hinahanap nila ang dahilan ng pagbaha."],["bunga","resulta ng isang kilos o pangyayari","Bunga ng pagtutulungan ang malinis na silid."],["suliranin","problema na kailangang unawain o lutasin","Ang kakulangan sa tubig ang suliranin."],["solusyon","paraan upang malutas ang problema","Nagpanukala sila ng solusyon sa basura."],["pasiya","piniling gawin matapos mag-isip","Pinag-usapan muna nila ang pasiya."],["tungkulin","gawaing inaasahang gagampanan","Tungkulin ng bawat isa ang magligpit."],["epekto","pagbabagong dulot ng isang kilos o pangyayari","Sinukat nila ang epekto ng paalala."],["karanasan","bagay na naranasan at maaaring mapag-aralan","Natutuhan niya mula sa karanasan."],["pagbabago","pagkakaiba ng kalagayan mula noon hanggang ngayon","Napansin nila ang pagbabago sa pampang."],["pananagutan","obligasyong panindigan ang kilos o gawain","Tinanggap niya ang pananagutan sa proyekto."],["layunin","nais makamit o dahilan ng isang gawain","Layunin ng liham na humingi ng aklat."],["pagkakataon","panahon o kalagayang nagbibigay-daan sa paggawa","Nagkaroon sila ng pagkakataong magpaliwanag."]],"4":[["pananaw","paraan ng pagtingin o pag-unawa sa isang usapin","Magkaiba ang pananaw ng dalawang pangkat."],["ebidensiya","impormasyong sumusuporta o sumusubok sa isang pahayag","Gumamit siya ng tala bilang ebidensiya."],["paninindigan","posisyong pinanghahawakan at ipinapaliwanag","Ipinaliwanag niya ang kaniyang paninindigan."],["paghihinuha","pagbuo ng konklusyon mula sa mga pahiwatig","Sa kilos niya, nakabuo kami ng paghihinuha."],["konklusyon","pasya o buod na nabuo matapos suriin ang impormasyon","Ibinatay nila sa tala ang konklusyon."],["implikasyon","posibleng kahihinatnan o kahulugan ng isang pahayag o pasiya","Sinuri nila ang implikasyon ng bagong tuntunin."],["pagpapasya","proseso ng pagpili matapos timbangin ang mga opsiyon","Kailangan ang maingat na pagpapasya."],["pagtataya","pagsusuri sa halaga, bisa, o kalidad ng isang bagay","Gumawa sila ng pagtataya sa mungkahi."],["pagpapahalaga","pagkilala sa halaga o kabuluhan ng isang bagay","Ipinakita nila ang pagpapahalaga sa kultura."],["paniniwala","ideyang itinuturing na totoo ng isang tao","Sinuri niya kung may batayan ang paniniwala."],["katwiran","dahilan na ginagamit upang ipaliwanag o ipagtanggol ang ideya","Naglahad siya ng katwiran para sa panukala."],["interpretasyon","paliwanag sa kahulugan ng teksto, datos, o pangyayari","Nagbigay ang klase ng interpretasyon sa tula."]]};
 
 function openStandaloneVocab(){
- const allIds=["home","basaVocabPage","basaBasicPage","gradePage","aboutPortal","creditsPage","howToUse","encouragement","usageNotice","lesson","quiz","results","basaLibrary"];
+ const allIds=["home","basaKompetensiPage","basaVocabPage","basaBasicPage","gradePage","aboutPortal","creditsPage","howToUse","encouragement","usageNotice","lesson","quiz","results","basaLibrary"];
  allIds.forEach(id=>{const el=document.getElementById(id);if(!el)return;if(id==="basaLibrary")el.style.display="none";else el.hidden=(id!=="basaVocabPage");});
- ["vocabEntryCard","basaBasicEntryCard","basaReadingsLaunch"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="none";});
+ ["vocabEntryCard","basaBasicEntryCard","basaReadingsLaunch","basaKompetensiEntryCard"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="none";});
  const story=document.getElementById("basaStory");if(story)story.style.display="none";
  const list=document.getElementById("basaList");if(list)list.style.display="none";
  renderStandaloneVocab(1);window.scrollTo({top:0,behavior:"smooth"});
@@ -603,7 +882,7 @@ function returnFromStandaloneVocab(){
  const page=document.getElementById("basaVocabPage");if(page)page.hidden=true;
  const basic=document.getElementById("basaBasicPage");if(basic)basic.hidden=true;
  const home=document.getElementById("home");if(home)home.hidden=false;
- ["vocabEntryCard","basaBasicEntryCard","basaReadingsLaunch"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="block";});
+ ["vocabEntryCard","basaBasicEntryCard","basaReadingsLaunch","basaKompetensiEntryCard"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="block";});
  const library=document.getElementById("basaLibrary");if(library)library.style.display="none";
  window.scrollTo({top:0,behavior:"smooth"});
 }
@@ -642,10 +921,229 @@ function gradeBasaQuiz(i){
 /* BASA BASIC: independent, keyboard-accessible interactive practice */
 const BASA_BASIC_DATA = [{"name":"Antas 1 — Tunog at Titik","desc":"Kilalanin ang titik at unang tunog.","items":[["Anong titik ang may tunog na /m/?",["b","l","m","s"],2,"Ang titik m ay may tunog na /m/."],["Anong titik ang may tunog na /s/?",["n","a","t","s"],3,"Ang titik s ay may tunog na /s/."],["Aling salita ang nagsisimula sa tunog na /b/?",["susi","lobo","bola","mesa"],2,"Ang bola ay nagsisimula sa tunog na /b/."],["Aling salita ang nagsisimula sa tunog na /l/?",["lata","mata","sabon","bata"],0,"Ang lata ay nagsisimula sa tunog na /l/."],["Aling salita ang nagsisimula sa tunog na /s/?",["sako","lima","mesa","buko"],0,"Ang sako ay nagsisimula sa tunog na /s/."],["Piliin ang titik na maririnig sa simula ng “mesa.”",["g","t","b","m"],3,"Nagsisimula sa m ang salitang mesa."],["Piliin ang titik na maririnig sa simula ng “bata.”",["b","s","k","d"],0,"Nagsisimula sa b ang salitang bata."],["Piliin ang titik na maririnig sa simula ng “tasa.”",["l","t","n","p"],1,"Nagsisimula sa t ang salitang tasa."],["Aling salita ang nagsisimula sa patinig na a?",["bata","aso","mesa","susi"],1,"Nagsisimula sa patinig na a ang aso."],["Aling salita ang nagsisimula sa patinig na i?",["ibon","tasa","mesa","lobo"],0,"Nagsisimula sa patinig na i ang ibon."],["Aling salita ang nagsisimula sa patinig na o?",["sako","ulan","bata","oras"],3,"Nagsisimula sa patinig na o ang oras."],["Aling salita ang nagsisimula sa patinig na u?",["buko","mesa","lata","usa"],3,"Nagsisimula sa patinig na u ang usa."],["Anong titik ang unang maririnig sa “sabon”?",["b","l","s","m"],2,"Nagsisimula sa s ang sabon."],["Anong titik ang unang maririnig sa “lima”?",["t","l","d","g"],1,"Nagsisimula sa l ang lima."],["Anong titik ang unang maririnig sa “gatas”?",["b","g","k","r"],1,"Nagsisimula sa g ang gatas."],["Aling pares ang parehong nagsisimula sa /m/?",["bata, bola","sako, tasa","lobo, sabon","mesa, mata"],3,"Ang mesa at mata ay parehong nagsisimula sa m."],["Aling pares ang parehong nagsisimula sa /b/?",["susi, sabon","lata, lima","bata, bola","mesa, mata"],2,"Ang bata at bola ay parehong nagsisimula sa b."],["Aling salita ang may unang tunog na /k/?",["tama","sama","kama","dama"],2,"Nagsisimula sa k ang kama."],["Aling salita ang may unang tunog na /p/?",["busa","pusa","musa","lusa"],1,"Nagsisimula sa p ang pusa."],["Aling salita ang may unang tunog na /r/?",["riles","barya","lamesa","silya"],0,"Nagsisimula sa r ang riles."]]},{"name":"Antas 2 — Pagbuo ng Pantig","desc":"Pag-ugnayin ang mga pantig upang mabuo ang salita.","items":[["Anong salita ang mabubuo sa ma + ta?",["tama","mata","mama","masa"],1,"Ang ma + ta ay mata."],["Anong salita ang mabubuo sa ba + ta?",["bata","taba","baba","basa"],0,"Ang ba + ta ay bata."],["Anong salita ang mabubuo sa sa + ko?",["sala","sako","siko","suka"],1,"Ang sa + ko ay sako."],["Anong salita ang mabubuo sa la + ta?",["luto","lima","lupa","lata"],3,"Ang la + ta ay lata."],["Anong salita ang mabubuo sa pu + sa?",["pusa","puso","pisa","pasa"],0,"Ang pu + sa ay pusa."],["Aling pantig ang nawawala: ma + __ = mata?",["la","ka","sa","ta"],3,"Ang nawawalang pantig ay ta."],["Aling pantig ang nawawala: ba + __ = bata?",["ma","ta","na","la"],1,"Ang nawawalang pantig ay ta."],["Anong huling bahagi ang kasama ng “sa” upang mabuo ang “sabon”?",["bon","ko","ma","ta"],0,"Ang sa + bon ay sabon."],["Aling pantig ang unang maririnig sa “mesa”?",["me","se","ma","sa"],0,"Ang unang pantig ng mesa ay me."],["Aling pantig ang huling maririnig sa “lima”?",["li","ma","mi","la"],1,"Ang huling pantig ng lima ay ma."],["Piliin ang tamang hati ng salitang “bata.”",["baat-a","b-ata","bat-a","ba-ta"],3,"Hinahati ang bata sa ba-ta."],["Piliin ang tamang hati ng salitang “mesa.”",["mes-a","me-sa","m-esa","mee-sa"],1,"Hinahati ang mesa sa me-sa."],["Piliin ang tamang hati ng salitang “susi.”",["s-usi","suu-si","su-si","sus-i"],2,"Hinahati ang susi sa su-si."],["Piliin ang tamang hati ng salitang “buko.”",["buk-o","b-uko","bu-ko","buu-ko"],2,"Hinahati ang buko sa bu-ko."],["Piliin ang tamang hati ng salitang “gatas.”",["g-atas","gaa-tas","ga-tas","gat-as"],2,"Hinahati ang gatas sa ga-tas."],["Aling salita ang may isang pantig?",["plato","mesa","trak","aklat"],2,"Ang trak ay may isang pantig. Ang me-sa, ak-lat, at pla-to ay may tig-dalawang pantig."],["Aling salita ang may apat na pantig?",["mesa","bata","sako","paaralan"],3,"Ang paaralan ay maaaring hatiin sa pa-a-ra-lan, na may apat na pantig."],["Anong salita ang mabubuo sa ba + hay?",["bahay-bata","buhay","bahaw","bahay"],3,"Ang ba + hay ay bahay."],["Anong salita ang mabubuo sa a + raw?",["rawa","araw-araw","araw","ara"],2,"Ang a + raw ay araw."],["Anong salita ang mabubuo sa ka + la + ba + sa?",["kalabasa","balakasa","kabasala","kalasa"],0,"Ang ka-la-ba-sa ay kalabasa."]]},{"name":"Antas 3 — Pagbasa ng mga Salita","desc":"Basahin at kilalanin ang mga salitang karaniwang ginagamit.","items":[["Aling salita ang kabaligtaran ng salitang malamig?",["mainit","maasim","matamis","malambot"],0,"Magkasalungat ang kahulugan ng malamig at mainit."],["Aling salita ang ginagamit sa pagsusulat?",["kutsara","unan","lapis","walis"],2,"Ginagamit ang lapis sa pagsusulat."],["Aling salita ang tumutukoy sa lugar na pinapasukan upang matuto?",["palengke","kusina","paaralan","hardin"],2,"Ang paaralan ay lugar ng pag-aaral."],["Aling salita ang ginagamit sa pagbabasa?",["sapatos","timba","aklat","plato"],2,"Ang aklat ay binabasa."],["Aling salita ang tumutukoy sa kasangkapan sa pag-upo?",["upuan","bubong","baso","pinto"],0,"Ang upuan ay kasangkapan sa pag-upo."],["Piliin ang salitang kapareho ng kahulugang “masaya.”",["maligaya","malungkot","pagod","gutom"],0,"Ang maligaya ay kasingkahulugan ng masaya."],["Ano ang kasalungat ng “malaki”?",["mahaba","mabigat","mataas","maliit"],3,"Ang kasalungat ng malaki ay maliit."],["Aling salita ang tumutukoy sa ginagawa ng mata?",["kumain","tumingin","tumakbo","sumulat"],1,"Tumingin ang ginagawa gamit ang mata."],["Aling salita ang tumutukoy sa pagkain sa umaga?",["almusal","tanghalian","hapunan","meryenda"],0,"Ang almusal ay pagkain sa umaga."],["Aling salita ang tumutukoy sa pag-aalaga ng halaman?",["pagtatanim","pagwawalis","paglalaba","pagluluto"],0,"Ang pagtatanim ay paglalagay at pag-aalaga ng halaman."],["Piliin ang wastong baybay.",["kaybigan","kaibegan","kaibighan","kaibigan"],3,"Tamang baybay ang kaibigan."],["Piliin ang wastong baybay.",["paaralanh","paaralan","paarallan","paraalan"],1,"Tamang baybay ang paaralan."],["Piliin ang wastong baybay.",["kalikasanin","kalikassan","kalikasan","kalikhasan"],2,"Tamang baybay ang kalikasan."],["Aling salita ang tumutukoy sa pagtutulungan?",["paglimot","pag-aaway","pag-iisa","bayanihan"],3,"Ang bayanihan ay pagtutulungan ng mga tao."],["Aling salita ang tumutukoy sa pagiging tapat?",["katamaran","kasiyahan","katapatan","kalungkutan"],2,"Ang katapatan ay pagiging totoo at hindi nandaraya."],["Aling salita ang may kaugnayan sa kalinisan?",["telebisyon","walis","laruan","radyo"],1,"Maaaring gamitin ang walis sa paglilinis."],["Ano ang kahulugan ng “matipid”?",["mahilig mag-aksaya","laging nagmamadali","ayaw makinig","maingat gumamit ng pera o bagay"],3,"Ang matipid ay maingat sa paggamit ng yaman."],["Ano ang kahulugan ng “masinop”?",["maayos at maingat","magulo","maingay","malikot"],0,"Ang masinop ay maayos at maingat sa pag-aasikaso."],["Aling salita ang tumutukoy sa taong tumutulong sa may sakit?",["karpintero","pintor","magsasaka","nars"],3,"Ang nars ay tumutulong sa pangangalaga ng pasyente."],["Aling salita ang tumutukoy sa pag-unawa sa binasa?",["pagtakbo","pag-unawa","pag-awit","pagtalon"],1,"Ang pag-unawa ay pagkuha ng kahulugan mula sa binasa."]]},{"name":"Antas 4 — Pagbasa ng Pangungusap","desc":"Basahin ang pangungusap at unawain ang mensahe.","items":[["“Maagang gumising si Lino upang hindi mahuli sa klase.” Bakit maagang gumising si Lino?",["Upang matulog muli","Upang maglaro buong araw","Upang hindi mahuli sa klase","Upang hindi pumasok"],2,"Ipinapakita ng pangungusap ang dahilan ng maagang paggising."],["“Diniligan ni Ana ang mga halaman tuwing umaga.” Ano ang ginawa ni Ana?",["Tinapakan ang mga halaman","Ipinagbili ang mga halaman","Diniligan ang mga halaman","Pinutol ang mga halaman"],2,"Diniligan ni Ana ang mga halaman."],["“Ibinahagi ni Omar ang kaniyang baon sa kaklaseng walang pagkain.” Anong ugali ang ipinakita ni Omar?",["Pagiging pabaya","Pagiging magagalitin","Pagiging madamot","Pagiging matulungin"],3,"Ipinakita niya ang pagtulong at pagbabahagi."],["“Inilagay ni Mila ang mga papel sa basurahan.” Ano ang ipinakikita nito?",["Pag-iwas sa gawain","Pag-aaksaya ng tubig","Pagsira sa gamit","Pagpapanatili ng kalinisan"],3,"Ang pagtatapon sa basurahan ay nakatutulong sa kalinisan."],["“Nag-aral si Ben bago ang pagsusulit kaya handa siyang sumagot.” Bakit handa si Ben?",["Nangopya siya","Nag-aral siya bago ang pagsusulit","Hindi niya binasa ang aralin","Hindi siya pumasok"],1,"Ang paghahanda sa pamamagitan ng pag-aaral ang dahilan."],["“Nakita ni Rosa ang gripo na umaagos kahit walang gumagamit. Isinara niya ito.” Ano ang ginawa ni Rosa?",["Umalis agad","Isinara ang gripo","Binuksan pa ang gripo","Naglaba ng damit"],1,"Isinara niya ang gripo upang hindi masayang ang tubig."],["“Naglinis ang magkakaklase ng silid-aralan bago umuwi.” Ano ang ginawa nila nang sama-sama?",["Naglaro sa ulan","Nagpinta ng bahay","Naglinis ng silid-aralan","Nagluto ng hapunan"],2,"Sama-sama silang naglinis ng silid-aralan."],["“Nang hindi maunawaan ni Joel ang salita, tinanong niya ang guro.” Ano ang mabuting ginawa ni Joel?",["Kinopya ang sagot","Humingi siya ng paglilinaw","Iniwan niya ang gawain","Nanghula siya agad"],1,"Ang pagtatanong ay paraan upang mas maunawaan ang aralin."],["“Maingat na tumawid si Nena sa tawiran habang nakatingin sa magkabilang panig.” Ano ang ipinakita niya?",["Pag-iingat sa daan","Paglalaro sa kalsada","Pagmamadali","Pagwawalang-bahala"],0,"Sinunod niya ang ligtas na paraan ng pagtawid."],["“Inayos ni Carlo ang mga aklat ayon sa laki.” Paano niya inayos ang mga aklat?",["Sa loob ng bag ng iba","Ayon sa kulay ng damit","Ayon sa laki","Nang nakapikit"],2,"Ang batayan ng pag-aayos ay ang laki."],["“Umulan nang malakas kaya nagdala si Pia ng payong.” Bakit nagdala siya ng payong?",["Dahil mainit ang araw","Dahil may pagsusulit","Dahil gusto niyang matulog","Dahil umulan nang malakas"],3,"Ang malakas na ulan ang dahilan ng pagdadala ng payong."],["“Hindi itinapon ni Marco ang bote; inilagay niya ito sa lalagyan ng mga recyclable.” Ano ang ipinakita niya?",["Wastong paghihiwalay ng basura","Pagsusunog ng basura","Pag-aaksaya ng pagkain","Pagdumi sa paligid"],0,"Inihiwalay niya ang bagay na maaaring i-recycle."],["“Nagpraktis araw-araw ang pangkat bago ang pagtatanghal.” Ano ang maaaring maging bunga nito?",["Hindi sila magkikita","Makakalimutan nila ang lahat","Mawawala ang entablado","Mas handa silang magtanghal"],3,"Ang regular na pagsasanay ay nakatutulong sa paghahanda."],["“Pinakinggan ni Lea ang paliwanag ng kaklase bago siya sumagot.” Anong asal ang ipinakita niya?",["Paggalang sa nagsasalita","Pagwawalang-bahala","Pagputol sa usapan","Pag-iingay"],0,"Ang pakikinig muna ay nagpapakita ng paggalang."],["“Nakita ng mga bata ang tuyong lupa sa hardin kaya nag-igib sila ng tubig.” Ano ang suliranin?",["Tuyong lupa sa hardin","Maraming laruan","Nawawalang aklat","Sirang bintana"],0,"Ang tuyong lupa ang suliraning nais nilang tugunan."],["“Tinapos ni Sela ang takdang-aralin bago manood ng palabas.” Ano ang inuna niya?",["Palabas","Paglalaro","Takdang-aralin","Pagtulog"],2,"Inuna ni Sela ang kaniyang gawain sa paaralan."],["“Nagpasalamat si Arman sa kapitbahay na tumulong magdala ng mga gamit.” Bakit siya nagpasalamat?",["Dahil tinulungan siya","Dahil nawala ang gamit","Dahil hindi siya pinansin","Dahil natalo siya"],0,"Nagpasalamat siya bilang pagkilala sa tulong na natanggap."],["“Tahimik na nagbasa ang mga mag-aaral habang may pagsusulit ang ibang klase.” Bakit sila nanatiling tahimik?",["Upang makatulog ang lahat","Upang hindi makaistorbo","Upang hindi matuto","Upang makagambala sa pagsusulit"],1,"Ang katahimikan ay paggalang sa ibang klaseng nagsusulit."],["“Pinili ni Dina ang muling basahin ang panuto nang hindi niya alam ang susunod na gagawin.” Ano ang angkop na hakbang ni Dina?",["Iwan ang gawain","Isara ang aklat","Hulaan ang lahat ng sagot","Basahin muli ang panuto"],3,"Makatutulong ang muling pagbasa sa pag-unawa sa panuto."],["“Nagtanim ang barangay ng mga puno sa tabi ng paaralan upang magkaroon ng lilim.” Ano ang layunin ng pagtatanim?",["Gawing madulas ang daan","Magkaroon ng lilim","Takpan ang mga bintana","Hadlangan ang pagpasok"],1,"Ang pangungusap ay nagsasaad na lilim ang layunin ng pagtatanim."]]}];
 let basaBasicCurrentLevel=0, basaBasicCurrentIndex=0, basaBasicAnswers={}, basaBasicSubmitted=false;
+
+const MGA_LIHAM_QUESTIONS = [
+ {q:"Ano ang nakita ni Lira habang naglilinis ng lumang aparador?",o:["Isang lumang aklat","Isang kahong kahoy","Isang lumang larawan","Isang kahong bakal"],a:1,e:"Nakita ni Lira ang isang kahong kahoy na nakatago sa ilalim ng mga lumang damit."},
+ {q:"Sino ang kaibigan ng lolo na binanggit sa isa sa mga liham?",o:["Roberto","Mario","Tomas","Andres"],a:3,e:"Sa isa sa mga liham, ikinuwento ng lolo ang tungkol sa kaibigang si Andres."},
+ {q:"Ano ang layunin ni Lira sa pagsulat ng liham-pakiusap?",o:["Humingi ng gabay sa pangangalaga ng mga lumang dokumento.","Humingi ng pahintulot na ilathala ang kaniyang sariling kuwento.","Mag-ulat tungkol sa nawawalang kaibigan ng kaniyang lolo.","Magtanong tungkol sa kasaysayan ng kanilang paaralan."],a:0,e:"Nais ni Lira na humingi ng gabay kung paano mapangangalagaan ang mga lumang liham at dokumento."},
+ {q:"Bakit hindi naipadala ng lolo ang ilan sa kaniyang mga liham?",o:["Wala siyang mahanap na tamang sobre.","Nakalimutan niya ang pangalan ng mga tatanggap.","Natatakot siyang mailagay sa panganib ang kaniyang pamilya.","Nawala ang mga liham bago niya maipadala."],a:2,e:"Ipinahihiwatig ng kuwento na may mga liham na hindi naipadala dahil sa takot na magsalita at magpahayag ng saloobin sa panahong iyon."},
+ {q:"Bakit mahalaga kay Lira ang mga liham ng kaniyang lolo?",o:["Maaari niya itong ipagbili sa mga kolektor.","Naglalaman ang mga ito ng alaala at paninindigan ng nakaraan.","Maaari niya itong gamitin bilang mga lumang dekorasyon.","Nais niyang malaman kung sino ang gumawa ng mga sobre."],a:1,e:"Mahalaga ang mga liham dahil bahagi ang mga ito ng kasaysayan ng pamilya at pamayanan."},
+ {q:"Bakit kailangang maging malinaw at magalang ang pananalita sa liham-pantanggapan?",o:["Upang maging mahaba ang bawat pangungusap.","Upang maging katulad ito ng isang personal na talaarawan.","Upang hindi na kailangang ipaliwanag ang layunin ng liham.","Upang maipahayag nang maayos at angkop ang kahilingan sa tanggapan."],a:3,e:"Ipinaliwanag ng guro na kailangang malinaw, magalang, at angkop sa layunin ang nilalaman ng liham-pantanggapan."},
+ {q:"Ano ang ipinakikita ng ginawa ng lolo sa pagsulat ng kaniyang mga saloobin kahit hindi niya ito naipadala?",o:["Hindi niya pinahahalagahan ang kaniyang mga kaibigan.","Nais niyang itago ang lahat ng nangyari sa kaniyang buhay.","Naghahanap siya ng paraan upang maipahayag ang kaniyang iniisip.","Wala siyang tiwala sa mga taong nakapaligid sa kaniya."],a:2,e:"Ipinakikita ng pagsulat niya na naghahanap siya ng paraan upang maipahayag ang kaniyang iniisip at paninindigan."},
+ {q:"Kung ikaw si Lira, ano ang pinakamainam mong gawin sa mga liham ng iyong lolo?",o:["Itago ang mga ito upang walang ibang makabasa.","Itapon ang mga ito dahil luma na ang mga papel.","Ipagbili ang mga ito upang magkaroon ng pera.","Ingatan ang mga ito at humingi ng angkop na gabay sa pangangalaga."],a:3,e:"Ang pag-iingat sa mga liham at paghingi ng wastong gabay ay makatutulong upang mapangalagaan ang mga dokumento."},
+ {q:"Paano nakatutulong ang mga personal na liham sa pag-unawa sa kasaysayan?",o:["Pinatutunayan nitong pare-pareho ang karanasan ng lahat ng tao.","Nagbibigay ito ng pananaw sa karanasan at damdamin ng mga taong nabuhay noon.","Pinapalitan nito ang lahat ng opisyal na tala ng kasaysayan.","Ipinakikita nitong hindi na kailangang pag-aralan ang nakaraan."],a:1,e:"Nagbibigay ang mga personal na liham ng pananaw sa karanasan at damdamin ng mga taong nabuhay sa isang tiyak na panahon."},
+ {q:"Alin ang pinakamakabuluhang aral na maaaring iugnay sa kasalukuyang panahon?",o:["Mahalaga ang responsableng pagpapahayag ng saloobin at pagpapahalaga sa katotohanan.","Dapat iwasan ang pagtalakay sa mga pangyayari sa lipunan.","Mas mabuting huwag nang alamin ang mga pangyayari sa nakaraan.","Tanging mga kilalang tao lamang ang may mahalagang ambag sa kasaysayan."],a:0,e:"Binibigyang-diin ng kuwento ang responsableng pagpapahayag, pangangalaga sa alaala, at pagpapahalaga sa katotohanan."}
+];
+function openMgaLihamBOW(){
+ const detail=document.getElementById('mgaLihamStoryDetail');
+ showKompetensiPassage('mgaLihamStoryDetail');
+ const form=document.getElementById('mgaLihamQuiz');
+ if(form&&!form.dataset.ready){
+  form.innerHTML=MGA_LIHAM_QUESTIONS.map((q,i)=>`<fieldset style="border:1px solid #e4d9f2;border-radius:12px;padding:13px;margin:12px 0"><legend><strong>${i+1}. ${escBasa(q.q)}</strong></legend>${q.o.map((o,j)=>`<label class="option"><input type="radio" name="mgaLiham${i}" value="${j}"> <span><strong>${String.fromCharCode(65+j)}.</strong> ${escBasa(o)}</span></label>`).join('')}</fieldset>`).join('');
+  form.dataset.ready='1';
+ }
+ if(detail)detail.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function gradeMgaLiham(){
+ const form=document.getElementById('mgaLihamQuiz');if(!form)return;
+ const unanswered=MGA_LIHAM_QUESTIONS.findIndex((q,i)=>!form.querySelector(`input[name="mgaLiham${i}"]:checked`));
+ if(unanswered>=0){const target=form.querySelectorAll('fieldset')[unanswered];target.scrollIntoView({behavior:'smooth',block:'center'});target.style.borderColor='#b45309';alert(`Pakisagutan muna ang bilang ${unanswered+1}.`);return;}
+ let score=0;
+ const details=MGA_LIHAM_QUESTIONS.map((q,i)=>{const chosen=Number(form.querySelector(`input[name="mgaLiham${i}"]:checked`).value),ok=chosen===q.a;if(ok)score++;return `<div class="feedback ${ok?'correct':'incorrect'}"><strong>${i+1}. ${ok?'Tama ang sagot!':'Balikan ang teksto.'}</strong>${ok?'':`<p style="margin:5px 0"><strong>Tamang sagot:</strong> ${String.fromCharCode(65+q.a)}. ${escBasa(q.o[q.a])}</p>`}<p style="margin:5px 0"><strong>Paliwanag:</strong> ${escBasa(q.e)}</p></div>`;}).join('');
+ const pct=Math.round(score/MGA_LIHAM_QUESTIONS.length*100);
+ const message=pct===100?'Napakahusay! Naunawaan mo ang kuwento at ang kahalagahan ng liham-pantanggapan.':pct>=80?'Mahusay! Balikan ang ilang tanong at ang bahaging sumusuporta sa sagot.':pct>=60?'Magandang simula. Muling basahin ang mga bahaging may kaugnayan sa mga tanong.':'Ipagpatuloy ang pagsasanay. Basahin muli ang kuwento at gamitin ang mga paliwanag upang mapalalim ang pag-unawa.';
+ const result=document.getElementById('mgaLihamResults');
+ result.innerHTML=`<div class="card" style="margin-top:18px;border:2px solid #d9c5f2;background:#fbf7ff"><p class="eyebrow">RESULTA NG PAGSASANAY</p><div class="score" style="color:#563a86">${score} / 10</div><h3 style="text-align:center;margin:0">${pct}%</h3><p style="text-align:center">${message}</p><h3>Feedback sa bawat tanong</h3>${details}</div>`;
+ result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetMgaLiham(){const form=document.getElementById('mgaLihamQuiz'),result=document.getElementById('mgaLihamResults');if(form)form.reset();if(result)result.innerHTML='';}
+const ANG_ILAW_BOW_QUESTIONS = [
+ {q:"Sino ang ama ni Lino?",o:["Isang guro sa paaralan","Isang mamamahayag","Isang pinuno ng bayan","Isang manunulat ng nobela"],a:1,e:"Inilarawan sa unang talata ang ama ni Lino bilang isang mamamahayag na naniniwalang mahalagang malaman ng mga tao ang katotohanan."},
+ {q:"Ano ang ipinakita ng ama kay Lino?",o:["Lumang pahayagan","Larawan ng pamilya","Mga liham ng kaibigan","Isang lumang kuwaderno"],a:3,e:"Ipinakita ng ama kay Lino ang isang lumang kuwaderno at ipinaliwanag ang kahalagahan ng pag-alala sa mga kuwento."},
+ {q:"Sa anong panahon naganap ang kuwento?",o:["Dekada 1970","Dekada 1990","Dekada 2000","Dekada 2010"],a:0,e:"Tahasang binanggit sa unang pangungusap na naganap ang kuwento noong dekada 1970."},
+ {q:"Ano ang maaaring ipahiwatig ng unti-unting pagkawala ng mga pahayagan?",o:["Nabawasan ang interes sa pagbabasa","Nagsara ang lahat ng tindahan","Naging limitado ang malayang pamamahayag","Lumipat ng tirahan ang mga mamamahayag"],a:2,e:"Ipinahihiwatig ng hindi nailalathalang mga balita at takot magsalita na nalilimitahan ang malayang pamamahayag."},
+ {q:"Ano ang sinisimbolo ng ilaw sa lumang gasera sa kuwento?",o:["Pagbabago ng tirahan","Pag-asa at paghahanap ng katotohanan","Pagyaman ng isang pamilya","Pagdating ng bagong panahon"],a:1,e:"Sa wakas ng kuwento, ang gasera ay nagsisilbing paalala sa patuloy na paghahanap ng liwanag sa kabila ng pagtatangkang magkubli ng mga bagay."},
+ {q:"Bakit kaya nais ng ama na isulat ni Lino ang mga kuwento ng kanilang mga kapitbahay?",o:["Upang magkaroon siya ng libangan","Upang makilala siya sa kanilang bayan","Upang makagawa ng bagong pahayagan","Upang mapanatili ang mga karanasan ng mga tao"],a:3,e:"Sinabi ng ama na may mga kuwentong kailangang alalahanin upang hindi makalimutan ng susunod na salinlahi."},
+ {q:"Ano ang ipinahihiwatig ng pagiging guro ni Lino sa huling bahagi ng kuwento?",o:["Ipinagpatuloy niya ang pagpapahalaga sa kasaysayan","Tinalikuran niya ang mga alaala ng kaniyang ama","Nais niyang iwasan ang mga usaping panlipunan","Mas pinili niyang kalimutan ang nakaraan"],a:0,e:"Bilang guro, ipinapaalala ni Lino sa kaniyang mga mag-aaral na mahalagang alamin ang nakaraan upang maunawaan ang kasalukuyan."},
+ {q:"Alin ang pinakamakatuwirang dahilan kung bakit mahalagang itala ang mga karanasan ng mga ordinaryong mamamayan sa kasaysayan?",o:["Upang maging tanyag ang kanilang pamilya","Upang magkaroon ng maraming babasahin","Upang mapangalagaan ang iba't ibang pananaw","Upang mapalitan ang mga opisyal na dokumento"],a:2,e:"Ang pagtatala sa karanasan ng mga mamamayan ay nakatutulong upang mapanatili ang iba't ibang pananaw at salaysay tungkol sa nakaraan."},
+ {q:"Kung ikaw ay nasa kalagayan ni Lino, alin ang pinakamainam na paraan upang maipakita ang pagpapahalaga sa katotohanan?",o:["Manahimik sa lahat ng pagkakataon","Umasa lamang sa iisang kuwento","Iwasang pag-usapan ang nakaraan","Magsuri ng impormasyon at magtala ng mapagkakatiwalaang salaysay"],a:3,e:"Ang pagsusuri ng impormasyon at pagtatala ng mapagkakatiwalaang salaysay ay nagpapakita ng responsable at mapanuring paghahanap sa katotohanan."},
+ {q:"Aling pahayag ang pinakamabisang nagpapahayag ng pangunahing mensahe ng kuwento?",o:["Ang nakaraan ay dapat nang kalimutan","Mahalagang alalahanin at suriin ang kasaysayan","Ang pagbabasa ay para lamang sa paaralan","Ang katahimikan ang sagot sa suliranin"],a:1,e:"Binibigyang-diin ng kuwento ang pag-alala at pagsusuri sa nakaraan upang higit na maunawaan ang kasalukuyan."}
+];
+function kompetensiDetailIds(){return ['basaKompetensiStoryDetail','mgaLihamStoryDetail','basaNewStory1','basaNewStory2','saBawatHiblaDetail'];}
+function hideAllKompetensiDetails(exceptId=''){
+ kompetensiDetailIds().forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=(id!==exceptId);});
+}
+function showKompetensiPassage(detailId){
+ // Kapag passage ang pinili, passage lamang ang nakikita; itago ang baitang/folder/list.
+ const picker=document.getElementById('kompetensiGradePicker');if(picker)picker.hidden=true;
+ hideAllKompetensiDetails(detailId);
+ const detail=document.getElementById(detailId);if(detail)detail.hidden=false;
+}
+function toggleGrade9Collection(){
+ const panel=document.getElementById('grade9BOWCollection');
+ const tile=document.getElementById('grade9FolderCard');
+ const skills=document.getElementById('kompetensiSkillsSummary');
+ const picker=document.getElementById('kompetensiGradePicker');
+ if(!panel||!picker)return;
+ if(skills)skills.hidden=true;
+ const title=document.getElementById('kompetensiGradeTitle');if(title)title.hidden=true;
+ const intro=picker.querySelector(':scope > p');if(intro)intro.hidden=true;
+ const grid=tile?.parentElement;if(grid)grid.hidden=true;
+ panel.hidden=false;
+ if(tile)tile.setAttribute('aria-expanded','true');
+ panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function backToKompetensiGrades(){
+ const panel=document.getElementById('grade9BOWCollection');
+ const skills=document.getElementById('kompetensiSkillsSummary');
+ const picker=document.getElementById('kompetensiGradePicker');
+ const title=document.getElementById('kompetensiGradeTitle');
+ const tile=document.getElementById('grade9FolderCard');
+ const contents=document.getElementById('term1FolderContents');
+ const folder=document.getElementById('term1FolderCard');
+ const term2=document.getElementById('term2FolderCard');
+ const list=document.getElementById('basaKompetensiStoryList');
+ const back=panel?.querySelector(':scope > button');
+ hideAllKompetensiDetails();
+ if(contents)contents.hidden=true;if(list)list.hidden=false;
+ if(folder){folder.hidden=false;folder.setAttribute('aria-expanded','false');}
+ if(term2)term2.hidden=false;
+ if(back)back.hidden=false;
+ if(panel)panel.hidden=true;if(skills)skills.hidden=false;
+ if(title)title.hidden=false;
+ const intro=picker?.querySelector(':scope > p');if(intro)intro.hidden=false;
+ const grid=tile?.parentElement;if(grid)grid.hidden=false;
+ if(tile)tile.setAttribute('aria-expanded','false');
+ if(picker)picker.hidden=false;
+ picker?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function toggleTerm1Folder(){
+ const contents=document.getElementById('term1FolderContents');
+ const folder=document.getElementById('term1FolderCard');
+ const term2=document.getElementById('term2FolderCard');
+ const panel=document.getElementById('grade9BOWCollection');
+ if(!contents||!panel)return;
+ const back=panel.querySelector(':scope > button');if(back)back.hidden=true;
+ if(folder){folder.hidden=true;folder.setAttribute('aria-expanded','true');}
+ if(term2)term2.hidden=true;
+ hideAllKompetensiDetails();
+ const list=document.getElementById('basaKompetensiStoryList');if(list)list.hidden=false;
+ contents.hidden=false;
+ contents.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function backToTermFolders(){
+ const contents=document.getElementById('term1FolderContents');
+ const folder=document.getElementById('term1FolderCard');
+ const term2=document.getElementById('term2FolderCard');
+ const panel=document.getElementById('grade9BOWCollection');
+ const back=panel?.querySelector(':scope > button');
+ const list=document.getElementById('basaKompetensiStoryList');
+ hideAllKompetensiDetails();
+ if(list)list.hidden=false;
+ if(contents)contents.hidden=true;
+ if(folder){folder.hidden=false;folder.setAttribute('aria-expanded','false');}
+ if(term2)term2.hidden=false;
+ if(back)back.hidden=false;
+ folder?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function openAngIlawBOW(){
+ const form=document.getElementById('angIlawBOWQuiz');
+ if(form&&!form.dataset.ready){form.innerHTML=ANG_ILAW_BOW_QUESTIONS.map((q,i)=>`<fieldset style="border:1px solid #e4d9f2;border-radius:12px;padding:13px;margin:12px 0"><legend><strong>${i+1}. ${escBasa(q.q)}</strong></legend>${q.o.map((o,j)=>`<label class="option"><input type="radio" name="angIlaw${i}" value="${j}"> <span><strong>${String.fromCharCode(65+j)}.</strong> ${escBasa(o)}</span></label>`).join('')}</fieldset>`).join('');form.dataset.ready='1';}
+ showKompetensiPassage('basaKompetensiStoryDetail');
+ document.getElementById('basaKompetensiStoryDetail')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function backToBasaKompetensiList(){
+ // Bumalik sa listahan sa loob ng TERM 1; huwag isabay ang folder card o passage detail.
+ const picker=document.getElementById('kompetensiGradePicker');
+ const panel=document.getElementById('grade9BOWCollection');
+ const contents=document.getElementById('term1FolderContents');
+ const folder=document.getElementById('term1FolderCard');
+ const back=panel?.querySelector(':scope > button');
+ const list=document.getElementById('basaKompetensiStoryList');
+ hideAllKompetensiDetails();
+ if(picker)picker.hidden=false;
+ if(panel)panel.hidden=false;
+ if(contents)contents.hidden=false;
+ if(folder){folder.hidden=true;folder.setAttribute('aria-expanded','true');}
+ if(back)back.hidden=true;
+ if(list)list.hidden=false;
+ list?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetBasaKompetensiNavigation(){
+ // I-reset sa root view sa tuwing bubuksan muli ang BASA-KOMPETENSI.
+ hideAllKompetensiDetails();
+ const list=document.getElementById('basaKompetensiStoryList');if(list)list.hidden=false;
+ const contents=document.getElementById('term1FolderContents');if(contents)contents.hidden=true;
+ const folder=document.getElementById('term1FolderCard');if(folder){folder.hidden=false;folder.setAttribute('aria-expanded','false');}
+ const term2=document.getElementById('term2FolderCard');if(term2)term2.hidden=false;
+ const gradePanel=document.getElementById('grade9BOWCollection');if(gradePanel)gradePanel.hidden=true;
+ const skills=document.getElementById('kompetensiSkillsSummary');if(skills)skills.hidden=false;
+ const picker=document.getElementById('kompetensiGradePicker');if(picker)picker.hidden=false;
+ const title=document.getElementById('kompetensiGradeTitle');if(title)title.hidden=false;
+ const gradeTile=document.getElementById('grade9FolderCard');
+ const grid=gradeTile?.parentElement;if(grid)grid.hidden=false;
+ const intro=picker?.querySelector(':scope > p');if(intro)intro.hidden=false;
+ const back=gradePanel?.querySelector(':scope > button');if(back)back.hidden=false;
+ if(gradeTile)gradeTile.setAttribute('aria-expanded','false');
+}
+
+function gradeAngIlawBOW(){
+ const form=document.getElementById('angIlawBOWQuiz');if(!form)return;
+ const unanswered=ANG_ILAW_BOW_QUESTIONS.findIndex((q,i)=>!form.querySelector(`input[name="angIlaw${i}"]:checked`));
+ if(unanswered>=0){const target=form.querySelectorAll('fieldset')[unanswered];target.scrollIntoView({behavior:'smooth',block:'center'});target.style.borderColor='#b45309';setTimeout(()=>target.style.borderColor='#e4d9f2',1400);alert(`Pakisagutan muna ang bilang ${unanswered+1}.`);return;}
+ let score=0;
+ const details=ANG_ILAW_BOW_QUESTIONS.map((q,i)=>{const chosen=Number(form.querySelector(`input[name="angIlaw${i}"]:checked`).value),ok=chosen===q.a;if(ok)score++;return `<div class="feedback ${ok?'correct':'incorrect'}"><strong>${i+1}. ${ok?'Tama ang sagot!':'Balikan ang teksto.'}</strong>${ok?'':`<p style="margin:5px 0"><strong>Tamang sagot:</strong> ${String.fromCharCode(65+q.a)}. ${escBasa(q.o[q.a])}</p>`}<p style="margin:5px 0"><strong>Paliwanag:</strong> ${escBasa(q.e)}</p></div>`;}).join('');
+ const pct=Math.round(score/ANG_ILAW_BOW_QUESTIONS.length*100),message=pct===100?'Napakahusay! Naunawaan mo ang mahahalagang detalye at mensahe ng kuwento.':pct>=80?'Mahusay! Balikan ang ilang tanong at ang bahaging sumusuporta sa sagot.':pct>=60?'Magandang simula. Muling basahin ang mga bahaging may kaugnayan sa mga tanong.':'Ipagpatuloy ang pagsasanay. Basahin muli ang kuwento at gamitin ang mga paliwanag upang mapalalim ang pag-unawa.';
+ const result=document.getElementById('angIlawBOWResults');result.innerHTML=`<div class="card" style="margin-top:18px;border:2px solid #d9c5f2;background:#fbf7ff"><p class="eyebrow">RESULTA NG PAGSASANAY</p><div class="score" style="color:#563a86">${score} / 10</div><h3 style="text-align:center;margin:0">${pct}%</h3><p style="text-align:center">${message}</p><h3>Feedback sa bawat tanong</h3>${details}</div>`;result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetAngIlawBOW(){const form=document.getElementById('angIlawBOWQuiz'),result=document.getElementById('angIlawBOWResults');if(form)form.reset();if(result)result.innerHTML='';}
+
+function resetBasaKompetensiNavigation(){
+ // Laging magsimula sa pangunahing view ng BASA-KOMPETENSI.
+ // Itago ang lahat ng binuksang babasahin upang hindi maiwan ang huling binasa.
+ ['basaKompetensiStoryDetail','mgaLihamStoryDetail','basaNewStory1','basaNewStory2','saBawatHiblaDetail'].forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=true;});
+ const list=document.getElementById('basaKompetensiStoryList');if(list)list.hidden=false;
+ const contents=document.getElementById('term1FolderContents');if(contents)contents.hidden=true;
+ const folder=document.getElementById('term1FolderCard');if(folder){folder.hidden=false;folder.setAttribute('aria-expanded','false');}
+ const gradePanel=document.getElementById('grade9BOWCollection');if(gradePanel)gradePanel.hidden=true;
+ const skills=document.getElementById('kompetensiSkillsSummary');if(skills)skills.hidden=false;
+ const picker=document.getElementById('kompetensiGradePicker');
+ const title=document.getElementById('kompetensiGradeTitle');if(title)title.hidden=false;
+ const gradeTile=document.getElementById('grade9FolderCard');
+ const grid=gradeTile?.parentElement;if(grid)grid.hidden=false;
+ const intro=picker?.querySelector(':scope > p');if(intro)intro.hidden=false;
+ const back=gradePanel?.querySelector(':scope > button');if(back)back.hidden=false;
+ if(gradeTile)gradeTile.setAttribute('aria-expanded','false');
+}
+
+function openBasaKompetensi(){
+ resetBasaKompetensiNavigation();
+ const page=document.getElementById('basaKompetensiPage');
+ const library=document.getElementById('basaLibrary');
+ const story=document.getElementById('basaStory');
+ const basic=document.getElementById('basaBasicPage');
+ const vocab=document.getElementById('basaVocabPage');
+ if(library)library.style.display='none';
+ if(story)story.style.display='none';
+ if(basic)basic.hidden=true;
+ if(vocab)vocab.hidden=true;
+ sections.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=(id!=='basaKompetensiPage');});
+ ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch','basaKompetensiEntryCard'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
+ if(page)page.hidden=false;
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeBasaKompetensi(){
+ resetBasaKompetensiNavigation();
+ const page=document.getElementById('basaKompetensiPage');if(page)page.hidden=true;
+ sections.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=(id!=='home');});
+ ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch','basaKompetensiEntryCard'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='block';});
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
 function openBasaBasic(){
- const ids=['home','gradePage','aboutPortal','creditsPage','howToUse','encouragement','usageNotice','lesson','quiz','results','basaLibrary','basaVocabPage','basaBasicPage'];
+ const ids=['home','basaKompetensiPage','gradePage','aboutPortal','creditsPage','howToUse','encouragement','usageNotice','lesson','quiz','results','basaLibrary','basaVocabPage','basaBasicPage'];
  ids.forEach(id=>{const el=document.getElementById(id);if(el){if(id==='basaBasicPage')el.hidden=false;else if(id==='basaLibrary')el.style.display='none';else el.hidden=true;}});
- ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
+ ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch','basaKompetensiEntryCard'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
  renderBasaBasicLevels(); selectBasaBasicLevel(0); window.scrollTo({top:0,behavior:'smooth'});
 }
 function closeBasaBasic(){
@@ -653,7 +1151,7 @@ function closeBasaBasic(){
  const vocab=document.getElementById('basaVocabPage');if(vocab)vocab.hidden=true;
  const library=document.getElementById('basaLibrary');if(library)library.style.display='none';
  sections.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=id!=='home';});
- ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='block';});
+ ['basaBasicEntryCard','vocabEntryCard','basaReadingsLaunch','basaKompetensiEntryCard'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='block';});
  window.scrollTo({top:0,behavior:'smooth'});
 }
 function renderBasaBasicLevels(){const host=document.getElementById('basaBasicLevels');if(!host)return;host.innerHTML=BASA_BASIC_DATA.map((lv,i)=>`<button type="button" class="basa-back-home" style="display:block;text-align:left;white-space:normal;background:${i===basaBasicCurrentLevel?'#174d3f':'#fff'};color:${i===basaBasicCurrentLevel?'#fff':'#174d3f'}" onclick="selectBasaBasicLevel(${i})"><strong>${escBasa(lv.name)}</strong><br><span style="font-size:.88rem;font-weight:400">${escBasa(lv.desc)} · 20 item</span></button>`).join('');}
@@ -663,6 +1161,87 @@ function chooseBasaBasicAnswer(i){if(basaBasicSubmitted)return;basaBasicAnswers[
 function checkBasaBasicAnswer(){if(basaBasicAnswers[basaBasicCurrentIndex]===undefined)return;basaBasicSubmitted=true;renderBasaBasicItem();}
 function moveBasaBasic(delta){basaBasicCurrentIndex=Math.max(0,Math.min(19,basaBasicCurrentIndex+delta));basaBasicSubmitted=false;renderBasaBasicItem();}
 function finishBasaBasic(){const lv=BASA_BASIC_DATA[basaBasicCurrentLevel];let score=0;lv.items.forEach((it,i)=>{if(basaBasicAnswers[i]===it[2])score++;});const pct=Math.round(score/20*100);const host=document.getElementById('basaBasicActivity');host.innerHTML=`<div class="card" style="margin-top:14px;text-align:center"><p class="eyebrow">TAPOS NA ANG PAGSASANAY</p><h2>Iskor: ${score} / 20 (${pct}%)</h2><p>${pct===100?'Napakahusay! Lahat ng sagot ay tama.':pct>=80?'Mahusay! Balikan ang ilang item upang lalo pang humusay.':pct>=60?'Magandang simula. Magpraktis pa at balikan ang mga paliwanag.':'Ipagpatuloy ang pagsasanay. Balikan ang mga item at humingi ng gabay kung kailangan.'}</p><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button type="button" class="basa-back-home" onclick="selectBasaBasicLevel(${basaBasicCurrentLevel})">Ulitin ang antas</button>${basaBasicCurrentLevel<3?`<button type="button" class="basa-back-home" onclick="selectBasaBasicLevel(${basaBasicCurrentLevel+1})">Susunod na antas →</button>`:''}<button type="button" class="basa-back-home" style="background:#fff;color:#174d3f" onclick="closeBasaBasic()">Bumalik sa PROJECT BASA</button></div></div>`;}
+
+
+
+const BASA_NEW_QUESTIONS_1 = [{"q": "Saan madalas dumaan si Nestor bago umuwi mula sa paaralan?", "o": ["Sa lumang palengke", "Sa lumang plasa", "Sa tabi ng ilog", "Sa harap ng simbahan"], "a": 1}, {"q": "Sino ang nagkuwento kay Nestor tungkol sa dating kalagayan ng plasa?", "o": ["Ang kaniyang guro", "Ang kaniyang kaibigan", "Si Mang Temyong", "Ang kaniyang lolo"], "a": 3}, {"q": "Ano ang isinulat ni Nestor sa kaniyang kuwaderno?", "o": ["Mga kuwentong narinig at mga tanong tungkol sa bayan", "Mga pangalan ng mga batang naglalaro sa plasa", "Mga tala tungkol sa kaniyang mga asignatura", "Mga plano para sa susunod na pagtitipon"], "a": 0}, {"q": "Ano ang ipinahihiwatig ng unti-unting pananahimik ng mga tao sa plasa?", "o": ["Nawalan sila ng panahon sa pakikipag-usap", "Naging abala sila sa paghahanapbuhay", "Maaaring natakot silang magpahayag ng saloobin", "Nawalan sila ng interes sa kanilang pamayanan"], "a": 2}, {"q": "Bakit pinayuhan ng guro si Nestor na magbasa ng iba't ibang sanggunian?", "o": ["Upang makapagsulat siya ng mas mahabang kuwento", "Upang makilala niya ang mga taong nabanggit", "Upang makakuha siya ng karagdagang gawain", "Upang masuri niya ang impormasyon at konteksto"], "a": 3}, {"q": "Ano ang ipinakikita ng desisyon ni Nestor na tipunin ang mga kuwento ng matatanda?", "o": ["Pagpapahalaga sa alaala at karanasan ng pamayanan", "Pagnanais na maging tanyag sa kanilang bayan", "Paghahangad na magkaroon ng sariling pahayagan", "Pag-iwas sa mga usaping may kaugnayan sa kasaysayan"], "a": 0}, {"q": "Ano ang maaaring ipakahulugan sa pahayag na 'hindi lahat ng pananahimik ay nangangahulugang walang suliranin'?", "o": ["Laging mas mabuting huwag magsalita", "Ang katahimikan ay tanda ng pagkakasundo", "May mga suliraning hindi lantad dahil sa takot", "Walang saysay ang pakikinig sa ibang tao"], "a": 2}, {"q": "Kung may dalawang magkaibang salaysay tungkol sa isang pangyayari sa kasaysayan, ano ang pinakamainam na gawin?", "o": ["Piliin ang salaysay na mas popular", "Suriin ang pinagmulan at paghambingin ang ebidensiya", "Tanggapin ang unang salaysay na narinig", "Balewalain ang mga salaysay na magkaiba"], "a": 1}, {"q": "Alin ang pinakamakabuluhang paraan upang mapanatili ang mga karanasan ng matatandang mamamayan?", "o": ["Itala at beripikahin ang kanilang mga salaysay", "Ibahagi lamang ang mga kuwentong nakaaaliw", "Baguhin ang mga detalye upang maging kawili-wili", "Piliin lamang ang mga salaysay na magkakatulad"], "a": 0}, {"q": "Anong kaisipan ang higit na pinagtitibay ng kabuuan ng kuwento?", "o": ["Ang mga lumang lugar ay dapat panatilihing walang pagbabago", "Ang mga alaala ay mahalaga lamang sa matatandang tao", "Ang kasaysayan ay dapat talakayin nang walang pagsusuri", "Ang pag-unawa sa nakaraan ay nangangailangan ng pakikinig at pagsusuri"], "a": 3}];
+function openBasaNewStory1(){
+ const detail=document.getElementById('basaNewStory1');
+ showKompetensiPassage('basaNewStory1');
+ const form=document.getElementById('basaNewQuiz1');
+ if(form&&!form.dataset.ready){
+  form.innerHTML=BASA_NEW_QUESTIONS_1.map((q,i)=>`<fieldset style="border:1px solid #e4d9f2;border-radius:12px;padding:13px;margin:12px 0"><legend><strong>${i+1}. ${escBasa(q.q)}</strong></legend>${q.o.map((o,j)=>`<label class="option"><input type="radio" name="basaNew1_${i}" value="${j}"> <span><strong>${String.fromCharCode(65+j)}.</strong> ${escBasa(o)}</span></label>`).join('')}</fieldset>`).join('');
+  form.dataset.ready='1';
+ }
+ detail?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function gradeBasaNewStory1(){
+ const qs=BASA_NEW_QUESTIONS_1,form=document.getElementById('basaNewQuiz1');if(!form)return;
+ const unanswered=qs.findIndex((q,i)=>!form.querySelector(`input[name="basaNew1_${i}"]:checked`));
+ if(unanswered>=0){form.querySelectorAll('fieldset')[unanswered].scrollIntoView({behavior:'smooth',block:'center'});alert(`Pakisagutan muna ang bilang ${unanswered+1}.`);return;}
+ let score=0;
+ const feedback=qs.map((q,i)=>{const chosen=Number(form.querySelector(`input[name="basaNew1_${i}"]:checked`).value),ok=chosen===q.a;if(ok)score++;return `<div class="feedback ${ok?'correct':'incorrect'}"><strong>${i+1}. ${ok?'Tama ang sagot!':'Balikan ang teksto.'}</strong>${ok?'':`<p><strong>Tamang sagot:</strong> ${String.fromCharCode(65+q.a)}. ${escBasa(q.o[q.a])}</p>`}<p><strong>Paliwanag:</strong> Balikan ang kaugnay na bahagi ng babasahin at suriin kung paano sinusuportahan ng detalye ang tamang sagot.</p></div>`;}).join('');
+ const pct=Math.round(score/qs.length*100),msg=pct===100?'Napakahusay!':pct>=80?'Mahusay! Balikan ang ilang tanong.':pct>=60?'Magandang simula. Muling basahin ang mga bahaging may kaugnayan sa mga tanong.':'Ipagpatuloy ang pagsasanay. Balikan ang kuwento at suriin ang mga detalye.';
+ const result=document.getElementById('basaNewResults1');
+ result.innerHTML=`<div class="card" style="margin-top:18px;border:2px solid #d9c5f2;background:#fbf7ff"><p class="eyebrow">RESULTA NG PAGSASANAY</p><div class="score" style="color:#563a86">${score} / ${qs.length}</div><h3 style="text-align:center;margin:0">${pct}%</h3><p style="text-align:center">${msg}</p><h3>Feedback sa bawat tanong</h3>${feedback}</div>`;
+ result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetBasaNewStory1(){document.getElementById('basaNewQuiz1')?.reset();const r=document.getElementById('basaNewResults1');if(r)r.innerHTML='';}
+
+
+const BASA_NEW_QUESTIONS_2 = [{"q": "Ano ang inihahanda ng pangkat nina Mira, Jun, at Lino?", "o": ["Paligsahan sa pagsulat", "Dulang pampaaralan", "Pagtitipon ng mga magulang", "Palabas ng mga katutubong sayaw"], "a": 1}, {"q": "Sino ang sumulat ng iskrip ng dula?", "o": ["Jun", "Lino", "Gng. Elena", "Mira"], "a": 3}, {"q": "Ano ang pangunahing paksang nais ipahayag ng kanilang pagtatanghal?", "o": ["Paninindigan at kalayaan", "Pagkakaibigan at paglilibang", "Pagtutulungan sa paaralan", "Pagpili ng pinuno sa pangkat"], "a": 0}, {"q": "Bakit nag-aalala si Jun tungkol sa kanilang pagtatanghal?", "o": ["Baka hindi dumalo ang mga manonood.", "Baka makalimutan nila ang kanilang mga linya.", "Baka hindi magustuhan ng mga namamahala ang mensahe.", "Baka hindi matapos ang kanilang paghahanda."], "a": 2}, {"q": "Ano ang ipinahihiwatig ng pahayag na, “Maaari tayong maging maingat nang hindi isinusuko ang mensahe”?", "o": ["Kailangang alisin ang mahihirap na bahagi ng dula.", "Maaaring maging responsable habang naninindigan.", "Mas mabuting huwag nang magpahayag ng saloobin.", "Dapat sundin na lamang ang lahat ng mungkahi."], "a": 1}, {"q": "Bakit mahalagang panatilihin ang pangunahing diwa ng dula kahit baguhin ang ilang linya?", "o": ["Upang maging mas mahaba ang pagtatanghal.", "Upang mas maraming tauhan ang makapagsalita.", "Upang maiwasan ang anumang pagtatanong ng manonood.", "Upang hindi mawala ang mensaheng nais iparating."], "a": 3}, {"q": "Ano ang ipinakikita ng naging pasiya ni Mira na ayusin ang paraan ng pagpapahayag ngunit panatilihin ang mensahe?", "o": ["Marunong siyang magsuri at tumanggap ng mungkahi.", "Mas mahalaga sa kaniya ang papuri ng manonood.", "Nais niyang iwasan ang anumang pananagutan.", "Hindi na siya naniniwala sa kaniyang isinulat."], "a": 0}, {"q": "Kung ikaw ay kasapi ng pangkat, paano mo maipakikita ang paninindigan sa isang sensitibong paksa?", "o": ["Ipapahayag ang saloobin kahit makasakit ng iba.", "Iiwasan ang paksa upang walang maging suliranin.", "Maglalahad ng ideya nang may batayan at paggalang.", "Susundin ang opinyon ng nakararami kahit hindi nauunawaan."], "a": 2}, {"q": "Alin ang pinakamahalagang aral na ipinakikita ng dula tungkol sa kalayaan?", "o": ["Ang kalayaan ay dapat gamitin nang may pananagutan.", "Ang kalayaan ay para lamang sa may kapangyarihan.", "Ang kalayaan ay nangangahulugang walang limitasyon.", "Ang kalayaan ay nakasalalay sa pagsang-ayon ng lahat."], "a": 0}, {"q": "Sa kasalukuyan, paano maisasabuhay ng kabataan ang mensahe ng dula?", "o": ["Sa pagbabahagi ng anumang balita nang hindi sinusuri.", "Sa pag-iwas sa mga usaping panlipunan.", "Sa pagtanggap sa lahat ng impormasyong nababasa.", "Sa pagpapahayag ng opinyon nang mapanuri at responsable."], "a": 3}];
+function openBasaNewStory2(){
+ const detail=document.getElementById('basaNewStory2');
+ showKompetensiPassage('basaNewStory2');
+ const form=document.getElementById('basaNewQuiz2');
+ if(form&&!form.dataset.ready){
+  form.innerHTML=BASA_NEW_QUESTIONS_2.map((q,i)=>`<fieldset style="border:1px solid #e4d9f2;border-radius:12px;padding:13px;margin:12px 0"><legend><strong>${i+1}. ${escBasa(q.q)}</strong></legend>${q.o.map((o,j)=>`<label class="option"><input type="radio" name="basaNew2_${i}" value="${j}"> <span><strong>${String.fromCharCode(65+j)}.</strong> ${escBasa(o)}</span></label>`).join('')}</fieldset>`).join('');
+  form.dataset.ready='1';
+ }
+ detail?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function gradeBasaNewStory2(){
+ const qs=BASA_NEW_QUESTIONS_2,form=document.getElementById('basaNewQuiz2');if(!form)return;
+ const unanswered=qs.findIndex((q,i)=>!form.querySelector(`input[name="basaNew2_${i}"]:checked`));
+ if(unanswered>=0){form.querySelectorAll('fieldset')[unanswered].scrollIntoView({behavior:'smooth',block:'center'});alert(`Pakisagutan muna ang bilang ${unanswered+1}.`);return;}
+ let score=0;
+ const feedback=qs.map((q,i)=>{const chosen=Number(form.querySelector(`input[name="basaNew2_${i}"]:checked`).value),ok=chosen===q.a;if(ok)score++;return `<div class="feedback ${ok?'correct':'incorrect'}"><strong>${i+1}. ${ok?'Tama ang sagot!':'Balikan ang teksto.'}</strong>${ok?'':`<p><strong>Tamang sagot:</strong> ${String.fromCharCode(65+q.a)}. ${escBasa(q.o[q.a])}</p>`}<p><strong>Paliwanag:</strong> Balikan ang kaugnay na bahagi ng babasahin at suriin kung paano sinusuportahan ng detalye ang tamang sagot.</p></div>`;}).join('');
+ const pct=Math.round(score/qs.length*100),msg=pct===100?'Napakahusay!':pct>=80?'Mahusay! Balikan ang ilang tanong.':pct>=60?'Magandang simula. Muling basahin ang mga bahaging may kaugnayan sa mga tanong.':'Ipagpatuloy ang pagsasanay. Balikan ang kuwento at suriin ang mga detalye.';
+ const result=document.getElementById('basaNewResults2');
+ result.innerHTML=`<div class="card" style="margin-top:18px;border:2px solid #d9c5f2;background:#fbf7ff"><p class="eyebrow">RESULTA NG PAGSASANAY</p><div class="score" style="color:#563a86">${score} / ${qs.length}</div><h3 style="text-align:center;margin:0">${pct}%</h3><p style="text-align:center">${msg}</p><h3>Feedback sa bawat tanong</h3>${feedback}</div>`;
+ result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetBasaNewStory2(){document.getElementById('basaNewQuiz2')?.reset();const r=document.getElementById('basaNewResults2');if(r)r.innerHTML='';}
+
+const SA_BAWAT_HIBLA_QUESTIONS = [
+ {q:"Ano ang pangunahing paksa ng tula?",o:["Pagpapahalaga sa pamilya","Pagmamahal at pananagutan sa bayan","Pagpapanatili ng mga tradisyon","Pagkilala sa mga likas na yaman"],a:1,e:"Binibigyang-diin ng tula na ang pagmamahal sa bayan ay naipakikita sa pananagutan at pagkilos."},
+ {q:"Ano ang inilalarawan ng persona sa unang saknong?",o:["Ang bandila bilang sagisag ng kasaysayan","Ang watawat bilang palamuti sa tahanan","Ang pagdiriwang bilang kaugalian ng bayan","Ang tela bilang bahagi ng pang-araw-araw na buhay"],a:0,e:"Inilalarawan ang bandila bilang sagisag na nagtataglay ng alaala at pinagdaanang kasaysayan ng bayan."},
+ {q:"Alin sa sumusunod ang binanggit sa tula bilang pagpapakita ng pagmamahal sa bayan?",o:["Pagiging tanyag sa sariling pamayanan","Pagdalo sa lahat ng pagdiriwang","Pagsasabit ng bandila sa bawat tahanan","Pagtulong sa kapwa at pagsasabi ng katotohanan"],a:3,e:"Binanggit sa ikaapat na saknong ang pagtulong sa kapwa at pagsasabi ng tama at katotohanan."},
+ {q:"Ano ang ipinahihiwatig ng taludtod na “Ang pag-ibig sa bayan ay hindi lamang sinasambit”?",o:["Hindi kailangang ipahayag ang pagmamahal sa bayan.","Mas mahalaga ang mga salita kaysa sa kilos.","Kailangang patunayan ang pagmamahal sa pamamagitan ng gawa.","Dapat lamang ipakita ang pagmamahal tuwing may pagdiriwang."],a:2,e:"Ipinahihiwatig nito na kailangang makita sa gawa at pananagutan ang pagmamahal sa bayan."},
+ {q:"Ano ang maaaring simbolo ng mga hiblang madaling mapigtas sa ikalimang saknong?",o:["Kakulangan ng mga materyales sa paggawa ng bandila","Pagkasira ng bandila dahil sa pabago-bagong panahon","Pagkawala ng pagkakaisa at malasakit ng mamamayan","Pagbabago ng kulay dahil sa paglipas ng panahon"],a:2,e:"Ang napipigtas na hibla ay sumasagisag sa pagkakaisang maaaring masira kapag nanaig ang alitan at kapabayaan."},
+ {q:"Bakit binigyang-diin sa tula ang pagtulong, pagsasabi ng katotohanan, at pag-aaral?",o:["Dahil ang mga ito ay paraan ng aktibong paglilingkod sa bayan.","Dahil ang mga ito ay tungkuling ginagawa lamang ng kabataan.","Dahil ang mga ito ay kailangan upang makilala ng pamayanan.","Dahil ang mga ito ay gawaing dapat unahin kaysa sa lahat."],a:0,e:"Ang mga gawaing ito ay konkretong paraan ng pakikibahagi at paglilingkod sa pamayanan."},
+ {q:"Ano ang ipinahihiwatig ng huling dalawang taludtod tungkol sa bayan?",o:["Ang bayan ay pag-aari lamang ng mga namumuno.","Ang bayan ay lugar na dapat iwan kapag may suliranin.","Ang bayan ay tahanang pananagutan ng lahat na pangalagaan.","Ang bayan ay pamayanang umaasa lamang sa kabataan."],a:2,e:"Inihahambing ang bayan sa tahanang sama-samang dapat pangalagaan ng mamamayan."},
+ {q:"Alin sa sumusunod ang pinakamakatuwirang pagsusuri sa mensahe ng tula?",o:["Sapat nang igalang ang bandila sa pamamagitan ng seremonya.","Nagiging makabuluhan ang pagkamakabayan kapag isinasagawa ito sa araw-araw.","Ang pagmamahal sa bayan ay nasusukat sa dami ng pagdiriwang.","Ang pagkakaisa ay mahalaga lamang kapag may pambansang suliranin."],a:1,e:"Ipinakikita ng tula na ang pagkamakabayan ay hindi natatapos sa seremonya; isinasabuhay ito araw-araw."},
+ {q:"Kung mapansin mong may maling impormasyong kumakalat tungkol sa inyong pamayanan, alin ang pinakamainam na kilos na naaayon sa mensahe ng tula?",o:["Ibahagi ito upang mas maraming tao ang makaalam.","Huwag pansinin dahil hindi naman ito personal na suliranin.","Magbigay agad ng sariling paratang sa mga taong sangkot.","Suriin ang impormasyon at magbahagi lamang ng mapagkakatiwalaang datos."],a:3,e:"Ang pagsusuri at pagbabahagi ng mapagkakatiwalaang datos ay pagpapakita ng malasakit sa katotohanan at kapwa."},
+ {q:"Aling pahayag ang pinakamabisang nagbubuod sa kabuuang diwa ng tula?",o:["Ang bandila ay mahalagang simbolo na dapat lamang itanghal.","Ang pagkamakabayan ay naipakikita sa sama-samang pananagutan at makabuluhang pagkilos.","Ang kasaysayan ng bayan ay dapat alalahanin tuwing may pagdiriwang.","Ang pagkilala sa mga kulay ng bandila ang pinakamahalagang tungkulin ng mamamayan."],a:1,e:"Pinagsasama ng pahayag ang mahahalagang diwa ng tula: sama-samang pananagutan at makabuluhang pagkilos."}
+];
+function openSaBawatHibla(){
+ const detail=document.getElementById('saBawatHiblaDetail');
+ showKompetensiPassage('saBawatHiblaDetail');
+ const form=document.getElementById('saBawatHiblaQuiz');
+ if(form&&!form.dataset.ready){form.innerHTML=SA_BAWAT_HIBLA_QUESTIONS.map((q,i)=>`<fieldset style="border:1px solid #e4d9f2;border-radius:12px;padding:13px;margin:12px 0"><legend><strong>${i+1}. ${escBasa(q.q)}</strong></legend>${q.o.map((o,j)=>`<label class="option"><input type="radio" name="hibla${i}" value="${j}"> <span><strong>${String.fromCharCode(65+j)}.</strong> ${escBasa(o)}</span></label>`).join('')}</fieldset>`).join('');form.dataset.ready='1';}
+ detail?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function gradeSaBawatHibla(){
+ const form=document.getElementById('saBawatHiblaQuiz');if(!form)return;
+ const unanswered=SA_BAWAT_HIBLA_QUESTIONS.findIndex((q,i)=>!form.querySelector(`input[name="hibla${i}"]:checked`));
+ if(unanswered>=0){form.querySelectorAll('fieldset')[unanswered].scrollIntoView({behavior:'smooth',block:'center'});alert(`Pakisagutan muna ang bilang ${unanswered+1}.`);return;}
+ let score=0;
+ const feedback=SA_BAWAT_HIBLA_QUESTIONS.map((q,i)=>{const chosen=Number(form.querySelector(`input[name="hibla${i}"]:checked`).value),ok=chosen===q.a;if(ok)score++;return `<div class="feedback ${ok?'correct':'incorrect'}"><strong>${i+1}. ${ok?'Tama ang sagot!':'Balikan ang tula.'}</strong>${ok?'':`<p><strong>Tamang sagot:</strong> ${String.fromCharCode(65+q.a)}. ${escBasa(q.o[q.a])}</p>`}<p><strong>Paliwanag:</strong> ${escBasa(q.e)}</p></div>`;}).join('');
+ const pct=Math.round(score/SA_BAWAT_HIBLA_QUESTIONS.length*100),msg=pct===100?'Napakahusay! Naunawaan mo ang mensahe at mahahalagang pahiwatig ng tula.':pct>=80?'Mahusay! Balikan ang ilang tanong at ang mga taludtod na sumusuporta sa sagot.':pct>=60?'Magandang simula. Muling basahin ang tula at suriin ang mga pahiwatig nito.':'Ipagpatuloy ang pagsasanay. Basahin muli ang tula at gamitin ang mga paliwanag upang mapalalim ang pag-unawa.';
+ const result=document.getElementById('saBawatHiblaResults');result.innerHTML=`<div class="card" style="margin-top:18px;border:2px solid #d9c5f2;background:#fbf7ff"><p class="eyebrow">RESULTA NG PAGSASANAY</p><div class="score" style="color:#563a86">${score} / 10</div><h3 style="text-align:center;margin:0">${pct}%</h3><p style="text-align:center">${msg}</p><h3>Feedback sa bawat tanong</h3>${feedback}</div>`;result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetSaBawatHibla(){document.getElementById('saBawatHiblaQuiz')?.reset();const r=document.getElementById('saBawatHiblaResults');if(r)r.innerHTML='';}
 
 </script>
 </body>
