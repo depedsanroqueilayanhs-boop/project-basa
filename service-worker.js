@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "project-basa-offline-v1";
+const CACHE_NAME = "project-basa-offline-v2";
 
 const APP_FILES = [
   "./",
