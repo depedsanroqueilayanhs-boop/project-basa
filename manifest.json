@@ -1,0 +1,12 @@
+
+{
+  "name": "PROJECT BASA - Batayang Aralin sa Suri at Analisis ng Binabasa",
+  "short_name": "PROJECT BASA",
+  "description": "Digital Reading Library para sa Filipino reading practice ng mga mag-aaral sa Baitang 7-10.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7faf8",
+  "theme_color": "#174d3f"
+}
