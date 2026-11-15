@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PROJECT BASA — prototype ng digital reading library para sa Filipino reading practice.">
 <title>PROJECT BASA DIGITAL LIBRARY</title>
+  <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#174d3f">
 <style>
 :root{--green:#174d3f;--green2:#e9f4ee;--ink:#202b27;--muted:#61716a;--line:#dce6e0;--paper:#f7faf8;--white:#fff;--gold:#f5e7bd;--red:#9b3434}
 *{box-sizing:border-box}
@@ -1261,5 +1263,16 @@ function gradeSaBawatHibla(){
 function resetSaBawatHibla(){document.getElementById('saBawatHiblaQuiz')?.reset();const r=document.getElementById('saBawatHiblaResults');if(r)r.innerHTML='';}
 
 </script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(() => console.log("PROJECT BASA offline ready"))
+      .catch(error => console.error("Offline setup error:", error));
+  });
+}
+</script>
+
 </body>
 </html>
